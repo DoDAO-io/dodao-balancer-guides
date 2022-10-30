@@ -1,7 +1,7 @@
 categories:
   - introduction
 content: Talks about all the major features of Balancer AMM
-created: '2022-10-30T12:19:28.814Z'
+created: '2022-10-30T12:22:18.326Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -56,6 +56,130 @@ steps:
     name: Introduction
     stepItems: []
     uuid: 746e2337-7ea8-400c-a60f-5ca33ea03c36
+  - content: >-
+      The Vault is the smart contract used by Balancer. It is the smart contract
+      that manages and holds all the tokens in a Balancer pool. It is also the
+      portal through which most Balancer operations occur. It also separates
+      accounting and token management from the pool logic. This architecture
+      unifies several pool layouts under one roof; the Vault is agnostic to pool
+      math and can support any system that meets a few criteria. This allows
+      smart contracts much simpler as they now play a minor part in managing
+      funds. If you have a great idea for a new trading system, you can create a
+      custom pool that taps into Balancer's existing liquidity. This means you
+      don't have to build your own decentralized exchange (DEX).
+
+
+      Furthermore, other decentralized pools' token accounting is paired with
+      pool logic which makes multi-hop trading quite costly since ERC-20 has to
+      be transferred at each hop. Balancer gains an advantage here since it
+      stores all its tokens under one contract, The Vault. This difference
+      allows for much greater swapping efficiency. Rather than transferring
+      tokens on each step of a multi-hop trade, it only keeps internal records
+      of which pool is holding what, transferring tokens only at the input and
+      output steps. This reduction in token transfers makes the entire process
+      highly gas efficient. Additionally, The Vault keeps track of the balances
+      for arbitrary Ethereum addresses. Users have access to the Vault where
+      they can store Internal Balances and make trades to/from them.
+    name: The Vault
+    stepItems: []
+    uuid: 67bcf13f-db72-46ae-856b-1616eba25d36
+  - content: >-
+      ## Weighted Pools
+
+      Balancer has about 1500 shared liquidity pools users can join. These pools
+      can carry up to 8 assets and can have ratios other than the conventional
+      50-50 split. They range in size with the largest over a $37 million market
+      cap. These pools use weighted maths and are called Weighted Pools.
+      Weighted pools offer users the ability to choose their level of exposure
+      to certain assets while still providing liquidity. This makes them a great
+      choice for investors who want to diversify their portfolios without
+      sacrificing liquidity. The higher a token's weight in a pool, the less
+      impermanent loss it will experience in the event of a price surge. For
+      example, [the Oracle Weighted
+      Pool](https://app.balancer.fi/#/pool/0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014)
+      with 80/20 ratio of BAL and WETH respectively. 
+
+
+
+      ## Stable Pools
+
+      Stable Pools are created especially for assets like various stablecoins
+      that are anticipated to regularly trade at close to parity. These use
+      Stable Math (based on StableSwap, popularized by Curve) which allows for
+      significantly larger trades before encountering substantial price impact,
+      vastly increasing capital efficiency for like-kind swaps. These pools
+      encounter lower price impacts. Since the stable pools are plugged into all
+      the other pools on balancer swapping between stablecoins is frequently
+      used for arbitrage when one token is paired with two different stable
+      coins in different pools. The two largest stable tokens in use are for USD
+      stablecoins and tokens that track Bitcoin that are
+      [staBAL3-USD](https://app.balancer.fi/#/pool/0x06df3b2bbb68adc8b0e302443692037ed9f91b42000000000000000000000063)
+      composed of DAI/USDC/USDT and
+      [staBAL3-BTC](https://app.balancer.fi/#/pool/0xfeadd389a5c427952d8fdb8057d6c8ba1156cc56000000000000000000000066)
+      composed of WBTC/renBTC/sBTC.
+
+
+
+      ## Liquidity Bootstrapping Pools
+
+      LBPs, or Liquidity Bootstrapping Pools, are pools that have the ability to
+      dynamically alter token weighting. Weighted Math with time-dependent
+      weights is used in LBPs. The pool owner determines the starting and ending
+      weights and times. The pool owner also has the authority to suspend swaps.
+      This allows the users to incur less impermanent loss and allows the market
+      to find the appropriate price for the new token. Liquidity bootstrapping
+      pools are one of the most successful ways to launch a new token. The
+      purpose of [Gitcoin's
+      LBP](https://fjordfoundry.com/pools/mainnet/0xC065798F227b49C150bCDC6CDc43149A12c4d757),
+      which is made up of AKITA and WETH, is to gradually return the Akita owned
+      by the company (as given to it by Vitalik) to the community. When
+      executing a slow sale with ongoing pressure, using an LBP is helpful. An
+      example of LBP is
+      [70/30/DAI/Temple](https://app.balancer.fi/#/pool/0xf88278315a1d5ace3aaa41712f60602e069208e6000200000000000000000375)
+      pool
+
+
+
+      ## MetaStable Pools
+
+      MetaStable Pools are an extension of Stable Pools that contain tokens with
+      known exchange rates. Stable Math is used in conjunction with this
+      established exchange rate in MetaStable Pools. They are great with tokens
+      highly correlated but not pegged prices. For example, DAI/cDAI have a very
+      strong correlation, but cDAI slowly accumulates lending fees by lending
+      DAI to the Compound protocol and appreciates relative to DAI.  For
+      example, Balancer MetaStable pools are ideal for the wstETH-WETH pair as
+      the stETH asset is highly correlated but not pegged 1:1 to ETH as it
+      accrues staking returns.
+
+
+
+      ## Managed Pools
+
+      Managed Pools, which employ Weighted Math, let users create pools with a
+      maximum of 50 tokens. These pools contain time-based weight-shifting
+      methods akin to Liquidity Bootstrapping Pools, giving a framework for fund
+      managers. These pools are feature rich. Features include Pool Managers,
+      active token management, etc. WSBDapp is utilizing Balancer's Managed
+      Pools to bring decentralized finance to their users. This allows their
+      investors to participate in pools created and operated by the WSBDapp Team
+      using the technology and control only available on Balancer.
+
+
+
+      ## Boosted Pools
+
+      Boosted Pools offer the best of both worlds to Liquidity Providers and
+      Swappers. Swappers can access deep stablecoin liquidity with near-parity
+      exchange rates, while Liquidity Providers can have their liquidity
+      positions sent to external protocols, such as Aave. This is a great way
+      for both groups to get what they need and make the most out of their
+      situation. These variations of stable pools instead contain the pool
+      tokens of nested linear pools, which, in the case of the Aave example,
+      maintain the correct balances of TOKEN and aTOKEN.
+    name: Balancer Pools
+    stepItems: []
+    uuid: 529dfb20-16e9-41ac-9434-f58c39264fa0
 thumbnail: >-
   https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi
 uuid: intro-to-balancer-amm-balancer
