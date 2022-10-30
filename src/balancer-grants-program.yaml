@@ -1,0 +1,359 @@
+categories:
+  - community
+content: This guide gives information on the Balancer Grants program
+created: '2022-10-07T00:55:02.402Z'
+guideIntegrations:
+  discordRoleIds: []
+guideType: onboarding
+key: balancer-grants-program
+name: Balancer Grants
+publishStatus: Live
+showIncorrectOnCompletion: true
+steps:
+  - content: >-
+      # **Overview**
+
+
+      Balancer is a Protocol built on Ethereum that works as an automated
+      portfolio management and trading platform where fees are collected from
+      traders to rebalance portfolios by leveraging arbitrage opportunities. 
+
+
+      Also, as a community-driven organization, Balancer’s governance process is
+      decentralized and is operated by members of the community who hold the
+      governance token. For Balancer, the governance token is veBAL (locked
+      B-80BAL-20WETH) and is used for every decision-making process within the
+      organization.
+
+
+      Governance points groups or individuals to provide services to the
+      protocol, who must bring forward a proposal through the Balancer Forum for
+      discussion and voting (Snapshot). These SPs (Service Providers) present a
+      long-term commitment to the protocol and a broad scope of work. The
+      proposal must also include the team's credentials, expected metrics and
+      KPIs (key performance indicators).
+    name: Overview
+    stepItems: []
+    uuid: 363dff5a-f1cb-4a02-bcab-4c1e0b27d0df
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - dog_or_cat
+          - only_cat
+          - dog_and_cat
+        choices:
+          - content: It is an automated portfolio manager
+            key: dog_and_cat
+          - content: Fees are collected from traders to rebalance portfolios
+            key: dog_or_cat
+          - content: It has an orderbook for traders
+            key: only_dog
+          - content: It is a trading platform
+            key: only_cat
+        content: Which of these is TRUE about Balancer?
+        type: MultipleChoice
+        uuid: f8f11050-f5a7-498b-b76b-c0e7af45a63c
+      - answerKeys:
+          - 48745f03
+        choices:
+          - content: BAL
+            key: 73cd4412
+          - content: veBAL
+            key: 48745f03
+          - content: BPT
+            key: aa5ed21e
+          - content: WETH
+            key: 69ecdc28
+        content: What is the governance token for Balancer?
+        type: MultipleChoice
+        uuid: 9fbf075f-49bf-4387-af4d-e8f8a05161fc
+      - answerKeys:
+          - 64bef0a2
+        choices:
+          - content: >-
+              Teams or individuals appointed by Governance with long-term
+              commitment to the protocol
+            key: 64bef0a2
+          - content: Grantees with short-term commitment and specific deliverables
+            key: ed9fc3d8
+          - content: Grantees with long-term commitment and broad array of deliverables
+            key: 92bb0f2e
+          - content: >-
+              Teams of individuals approved by Grants Commitee with long-term
+              commitment to the protocol
+            key: 6f76b545
+        content: Considering the Balancer DAO framework, what are service providers?
+        type: SingleChoice
+        uuid: 3c500fb1-d29f-4224-b994-38e06282fb0f
+    uuid: 0f7391ec-75e8-4f59-bd28-1c93f7416a76
+  - content: >-
+      # **Balancer Grants**
+
+
+      Balancer Grants is a committee that runs an independent community-owned
+      grants program for the Balancer ecosystem as a Service Provider (SP) under
+      the DAO operating framework. 
+
+
+      The grants program provides support and funding to projects committed to
+      supporting Balancer Protocol in achieving its mission to become the number
+      one source of liquidity for DeFi. This program is made for groups and
+      individuals that aspire to run a project that builds on the Balancer
+      Protocol or supports the development of the Balancer ecosystem. While the
+      Foundation SP model is aimed at long term engagements or those with a cost
+      beyond $100k USD, grants are an alternative pathway aimed at funding
+      smaller, short term or one off projects.
+
+
+      The Grants Committee is a group of diverse and experienced Balancer
+      contributors.
+
+
+      To learn more about the Grants Committee, click
+      [here](https://forum.balancer.fi/t/bip-76-balancer-grants-budget-proposal-q4-2022/3750).
+    name: Balancer Grants
+    stepItems: []
+    uuid: d708e64e-7e46-471b-95aa-28a41dd205e7
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - 57c75c28
+          - 746133d8
+          - d06a8e58
+          - 0487cb06
+        choices:
+          - content: ... a service provider for the Balancer Ecosystem
+            key: 57c75c28
+          - content: >-
+              ... a committee that provides support to projects committed to
+              Balancer's mission
+            key: 746133d8
+          - content: ... a committee of experienced Balancer community contributors
+            key: d06a8e58
+          - content: ... a service provider committed to Balancer long-term
+            key: 0487cb06
+        content: Balancer Grants is...
+        type: MultipleChoice
+        uuid: 91bb8c20-1fd5-4268-91a0-e1319c1c14cf
+      - answerKeys:
+          - b4ca78d0
+        choices:
+          - content: Long-term projects, broad scope deliverable
+            key: 849134a9
+          - content: Short-term or one-off projects
+            key: b4ca78d0
+          - content: >-
+              Projects not fit for Service Provider model, that costs more than
+              100k USD
+            key: 0c0342e9
+          - content: Marketing proposals and event sponsorships
+            key: 2d90c3d0
+        content: 'Balancer Grants are best suited for:'
+        type: SingleChoice
+        uuid: e40b39b8-8970-40ae-9249-4a8b6578f8b1
+    uuid: 076d16cb-a9b8-4f5f-b05f-655a6a34993c
+  - content: >+
+      # **Applications**
+
+
+      For Q4/2022, Balancer Grants has 95,000 BAL in funds to support and fund
+      projects that are willing to build on Balancer and develop the Balancer
+      ecosystem.
+
+
+      But what does a successful grant submission look like?
+
+
+      You can find more information on how to build your application
+      [here](https://docs.google.com/document/d/1zFKt8QHfcuea_ltUsTtv0v6kc5IfAbnGC9PUcCaiCQ0/edit),
+      and encourage you to browse through [Grants' RFPs, challenges and
+      opportunities](https://quark-ceres-740.notion.site/RFPs-Challenges-Opportunities-cb39201b792c4483b90732192390a556).
+
+
+      For starters, think on how your project can provide value to the Balancer
+      ecosystem. Will it increase TVL on Balancer Protocol? Can it incite more
+      projects to build on top of Balancer? Does it create internal growth and
+      value?
+
+
+      If you have a good idea, please bring it forward! 
+
+
+      The Committee will respond within 2 weeks through email.
+
+
+      Note that any proposals regarding educational material for trading in
+      Balancer pools, general DeFi onboarding, event sponsorships etc. are best
+      directed trough Marketing, which is not directly under the scope of
+      Grants, but would best be presented to [Orb
+      Collective](https://forum.balancer.fi/t/bip-20-funding-proposal-for-orb-collective/3359/17).
+
+
+    name: Applications
+    stepItems: []
+    uuid: f26b9f9a-34d8-4b5c-9dcc-3abaeeead6c5
+  - content: >-
+      # **Rewards**
+
+
+      The payments are made in installments based on a predefined agreement
+      between the Grantee and Grants Committee to ensure that milestones are
+      achieved and the risk of not completing the task is minimized.
+
+
+      Applications must set a total amount required to successfully deliver the
+      project, and propose a payment breakdown. Milestones and tranches need to
+      be set up in a way that makes sense for both parties. Detail out
+      deliverables for each milestone and their planned duration.
+
+
+      Aside from funding, contributors get support in terms of access to mentors
+      who work with them to ensure that the projects go on successfully and in
+      cases of challenges, they will be able to resolve with the help of the
+      mentors.
+    name: Rewards
+    stepItems: []
+    uuid: 943da9fb-c387-4bb4-8d85-2652cc33a63b
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - 795f3c27
+        choices:
+          - content: 15,000 BAL
+            key: 3caf62cd
+          - content: 20,000 BAL
+            key: e1d554e8
+          - content: 60,000 BAL
+            key: 9d19d882
+          - content: 95,000 BAL
+            key: 795f3c27
+        content: >-
+          What is the budget for Balancer Grants to fund and support projects on
+          Q4?
+        type: MultipleChoice
+        uuid: 8e1a1100-dc43-41ef-b5fc-c75711bdb322
+      - answerKeys:
+          - 1f863c7c
+          - 9d04321c
+          - 7571ac32
+        choices:
+          - content: How does the grant aim to provide value to the Balancer Ecosystem
+            key: 1f863c7c
+          - content: How much budget it needs for Marketing
+            key: 709b825d
+          - content: What are the milestones and the timeline
+            key: 9d04321c
+          - content: >-
+              What is the requested grant and individual milestone/tranche
+              amounts
+            key: 7571ac32
+        content: 'A good Grant application will tackle the following issues '
+        type: MultipleChoice
+        uuid: d736b8d9-8179-479b-8ccc-27392cf30fc5
+      - answerKeys:
+          - 67be1a66
+        choices:
+          - content: 1 week
+            key: 57ca0288
+          - content: 2 weeks
+            key: 67be1a66
+          - content: 30 days
+            key: 33d319a0
+          - content: 45 days
+            key: 25cbf00e
+        content: >-
+          How long does it take the committee to review applications? (Select
+          one)
+        type: SingleChoice
+        uuid: 4a09a544-7f72-4b54-81fd-925bef3e2aa4
+    uuid: 55560c7c-0477-40a6-8293-60e4008fb9fd
+  - content: >-
+      # **Abandoned Grant**
+
+
+      If a Grantee has ignored Committee messages for 6 weeks, we consider the
+      grant stale/abandoned. To make sure we do not have endless clutter within
+      our pipeline, this would be the moment to take it out of our projected
+      budget and weekly/monthly updates. 
+
+
+      To prevent situations like the above from happening, the Grants co-leads
+      ask mentors to do monthly update calls with teams and keep a finger on the
+      pulse by having weekly Telegram updates. If however it does occur, the
+      Grantee will be given a warning after 4 weeks and reminder after 5. 
+
+
+      After the deadline has crossed and no further contact has been
+      established, the Grantee gets removed from the live grants within the
+      internal documentation and also from the [live grantee
+      page](https://quark-ceres-740.notion.site/7d33d4a52c604b719958ab7ff8f1389e?v=2975616ba49e4dd88550c817e23505f9).
+
+
+      If a Grantee re-emerges and shows signs of wanting to continue their grant
+      after it got declared ‘stale’, the Grantee will have to resubmit a grant
+      application.
+    name: Abandoned Grant
+    stepItems: []
+    uuid: aed2b147-78c8-4ca0-9c66-eb7830595338
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - 72ba52d1
+          - 3bb81854
+          - 6f3aba12
+        choices:
+          - content: >-
+              Grantee will be given a warning after 4 weeks with no reply from
+              mentors
+            key: 72ba52d1
+          - content: >-
+              Grantee gets removed from the live grants after 4 weeks of
+              abandonment
+            key: 006a1b8f
+          - content: >-
+              Grantee gets removed from the live grants after 6 weeks of
+              abandonment
+            key: 6f3aba12
+          - content: >-
+              Stale grantee will have to resubmit a grant application e restart
+              the process.
+            key: 3bb81854
+          - content: >-
+              After being abandoned, a Grant can become live again by replying
+              to monthly update
+            key: b9c9572d
+        content: What happens when a Grant becomes stale
+        type: MultipleChoice
+        uuid: c4670ec4-7d13-4f0b-b375-dbef9eb43694
+    uuid: dc178fbf-a69d-4b1f-95f0-9c5c0b8384df
+  - content: >-
+      # **Join Balancer**
+
+
+      To join Balancer, kindly connect via these social channels listed below:
+
+
+      1. Discord [https://discord.balancer.fi/](https://discord.balancer.fi/)
+
+      2. Medium
+      [https://medium.com/balancer-protocol](https://medium.com/balancer-protocol)
+
+      3. Twitter [https://twitter.com/Balancer](https://twitter.com/Balancer)
+
+      4. GitHub
+      [https://github.com/balancer-labs/](https://github.com/balancer-labs/)
+
+      5. LinkedIn
+      [https://www.linkedin.com/company/balancer-labs/](https://www.linkedin.com/company/balancer-labs/)
+
+      6. YouTube
+      [https://www.youtube.com/channel/UCBRHug6Hu3nmbxwVMt8x_Ow](https://www.youtube.com/channel/UCBRHug6Hu3nmbxwVMt8x_Ow)
+    name: Join Balancer
+    stepItems: []
+    uuid: 4b30035a-7bdc-44e7-8f51-b53c5d474538
+thumbnail: ipfs://QmfLjWbdbAb2njVAdFykQcWSwDNDeTkuu44gXka3oio2XW
+uuid: balancer-grants-program

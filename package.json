@@ -1,0 +1,20 @@
+{
+  "name": "dodao-balancer-guides",
+  "version": "1.0.0",
+  "description": "Guides explaining balancer Protocol",
+  "scripts": {
+    "test": "dodao-guides-processor gen-all src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoDAO-io/dodao-balancer-guides.git"
+  },
+  "author": "robin",
+  "bugs": {
+    "url": "https://github.com/DoDAO-io/dodao-balancer-guides/issues"
+  },
+  "homepage": "https://github.com/DoDAO-io/dodao-balancer-guides#readme",
+  "dependencies": {
+    "dodao-guides-processor": "0.1.9"
+  }
+}
