@@ -1,7 +1,7 @@
 categories:
   - introduction
 content: Talks about all the major features of Balancer AMM
-created: '2022-10-30T10:41:15.613Z'
+created: '2022-10-30T10:42:06.787Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -27,24 +27,24 @@ steps:
               
       Key features of Balancer DEX include
 
-      1. Valut - Vault is a smart contract that controls all tokens in every
+      1. **Valut** - Vault is a smart contract that controls all tokens in every
       balancer pool. It also serves as the gateway through which most operations
       in the exchange (Swaps, market entries, and exits) are carried out.
 
-      2. Balancer Pools - Balancer pools’ smart contracts determine how traders
-      exchange tokens. They allow customization and also allows anybody to
-      create a pool
+      2. **Balancer Pools** - Balancer pools’ smart contracts determine how
+      traders exchange tokens. They allow customization and also allows anybody
+      to create a pool
 
-      3. Smart Order Router (SOR) - SOR identifies the best price for selling
-      and buying orders in a transaction in either one or multiple liquidity
-      pools. It increases parallel to the expansion and diversity of the
-      Balancer pools as it gets new options to check from.
+      3. **Smart Order Router (SOR)** - SOR identifies the best price for
+      selling and buying orders in a transaction in either one or multiple
+      liquidity pools. It increases parallel to the expansion and diversity of
+      the Balancer pools as it gets new options to check from.
 
-      4. Merkle Orchard Smart Contract - The Merkle Orchard is a smart contract
-      used to claim the weekly Liquidity Mining distributions
+      4. **Merkle Orchard Smart Contract** - The Merkle Orchard is a smart
+      contract used to claim the weekly Liquidity Mining distributions
 
-      5. Balancer Gnosis Protocol (BGP) - The Balancer Gnosis Protocol is the
-      default trading interface on the Balancer platform
+      5. **Balancer Gnosis Protocol (BGP)** - The Balancer Gnosis Protocol is
+      the default trading interface on the Balancer platform
 
 
 
