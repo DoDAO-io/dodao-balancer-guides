@@ -1,7 +1,7 @@
 categories:
   - introduction
 content: Talks about all the major features of Balancer AMM
-created: '2022-10-30T12:12:49.344Z'
+created: '2022-10-30T12:19:28.814Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -40,12 +40,13 @@ steps:
       liquidity pools. It increases parallel to the expansion and diversity of
       the Balancer pools as it gets new options to check from.
 
-      4. **Merkle Orchard Smart Contract** - The Merkle Orchard is a smart
-      contract used to claim the weekly Liquidity Mining distributions
+      4. **veBAL** - BAL holders/LPs should lock/stake their BAL into veBAL to
+      get a host of benefits in the new vote-escrowed (ve) system.
 
-      5. **Balancer Gnosis Protocol (BGP)** - The Balancer Gnosis Protocol is
-      the default trading interface on the Balancer platform
-
+      5. **Onchain Gauge System** - Since transitioning to the veModel, BAL
+      emissions get distributed through the gauge system. Gauges allow LPs
+      (liquidity providers) to stake their BPT to claim BAL from liquidity
+      mining.
 
 
 
