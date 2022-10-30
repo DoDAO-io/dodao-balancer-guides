@@ -1,7 +1,7 @@
 categories:
   - introduction
 content: Talks about all the major features of Balancer AMM
-created: '2022-10-30T09:40:18.910Z'
+created: '2022-10-30T10:41:15.613Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -10,9 +10,9 @@ name: Intro to Balancer AMM
 publishStatus: Live
 showIncorrectOnCompletion: true
 steps:
-  - content: >-
+  - content: >+
 
-      ## Balancer Intro
+      ## Balancer Overview
 
       Fernando Martinelli, a well-known Brazilian entrepreneur and Maker
       Community member, founded Balancer. In 2018, he tested the exchange on
@@ -25,9 +25,36 @@ steps:
       called a liquidity pool. These liquidity pools ensure constant liquidity
       for buyers and sellers so they do not have to wait for orders to match.
               
+      Key features of Balancer DEX include
+
+      1. Valut - Vault is a smart contract that controls all tokens in every
+      balancer pool. It also serves as the gateway through which most operations
+      in the exchange (Swaps, market entries, and exits) are carried out.
+
+      2. Balancer Pools - Balancer pools’ smart contracts determine how traders
+      exchange tokens. They allow customization and also allows anybody to
+      create a pool
+
+      3. Smart Order Router (SOR) - SOR identifies the best price for selling
+      and buying orders in a transaction in either one or multiple liquidity
+      pools. It increases parallel to the expansion and diversity of the
+      Balancer pools as it gets new options to check from.
+
+      4. Merkle Orchard Smart Contract - The Merkle Orchard is a smart contract
+      used to claim the weekly Liquidity Mining distributions
+
+      5. Balancer Gnosis Protocol (BGP) - The Balancer Gnosis Protocol is the
+      default trading interface on the Balancer platform
+
+
+
+
+
+
+
     name: Introduction
     stepItems: []
     uuid: 746e2337-7ea8-400c-a60f-5ca33ea03c36
 thumbnail: >-
   https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi
-uuid: 1b3b26ba-b19f-406f-b386-bc0d67938932
+uuid: intro-to-balancer-amm-balancer
