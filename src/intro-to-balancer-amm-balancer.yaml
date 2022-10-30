@@ -1,0 +1,33 @@
+categories:
+  - introduction
+content: Talks about all the major features of Balancer AMM
+created: '2022-10-30T09:38:11.956Z'
+guideIntegrations:
+  discordRoleIds: []
+guideType: onboarding
+key: intro-to-balancer-amm-balancer
+name: Intro to Balancer AMM
+publishStatus: Live
+showIncorrectOnCompletion: true
+steps:
+  - content: >-
+
+      ## Balancer Intro
+
+      Fernando Martinelli, a well-known Brazilian entrepreneur and Maker
+      Community member, founded Balancer. In 2018, he tested the exchange on
+      Block as the first project of Balancer labs. In 2019, he and his technical
+      colleague Nikolai Mushegian released the exchange's whitepaper. An
+      Automated Market Maker (AMM) called Balancer enables customers to generate
+      programmable liquidity. AMMs are decentralized exchanges where instead of
+      the traditional order book method to trade assets smart contract acts as a
+      partner in every trade. These contracts contain a cluster of tokens,
+      called a liquidity pool. These liquidity pools ensure constant liquidity
+      for buyers and sellers so they do not have to wait for orders to match.
+              
+    name: Introduction
+    stepItems: []
+    uuid: 746e2337-7ea8-400c-a60f-5ca33ea03c36
+thumbnail: >-
+  https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi
+uuid: 1b3b26ba-b19f-406f-b386-bc0d67938932
