@@ -1,7 +1,7 @@
 categories:
   - introduction
 content: Talks about all the major features of Balancer AMM
-created: '2022-10-30T12:22:18.326Z'
+created: '2022-10-30T17:49:58.473Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -84,6 +84,14 @@ steps:
     stepItems: []
     uuid: 67bcf13f-db72-46ae-856b-1616eba25d36
   - content: >-
+      Pools are the foundation of the Balancer Protocol and smart contracts that
+      through which traders can swap between tokens on Balancer. What makes
+      Balancer pools unique is their limitless flexibility; other exchanges have
+      pools with constrained parameters, but Balancer can accommodate any
+      composition or underlying math. This flexibility opens the door for
+      customized pricing functions in trading pools.
+
+
       ## Weighted Pools
 
       Balancer has about 1500 shared liquidity pools users can join. These pools
