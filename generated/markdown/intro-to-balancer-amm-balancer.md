@@ -9,9 +9,23 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
 ## Introduction
 
 
-## Balancer Intro
+## Balancer Overview
 Fernando Martinelli, a well-known Brazilian entrepreneur and Maker Community member, founded Balancer. In 2018, he tested the exchange on Block as the first project of Balancer labs. In 2019, he and his technical colleague Nikolai Mushegian released the exchange's whitepaper. An Automated Market Maker (AMM) called Balancer enables customers to generate programmable liquidity. AMMs are decentralized exchanges where instead of the traditional order book method to trade assets smart contract acts as a partner in every trade. These contracts contain a cluster of tokens, called a liquidity pool. These liquidity pools ensure constant liquidity for buyers and sellers so they do not have to wait for orders to match.
         
+Key features of Balancer DEX include
+1. **Valut** - Vault is a smart contract that controls all tokens in every balancer pool. It also serves as the gateway through which most operations in the exchange (Swaps, market entries, and exits) are carried out.
+2. **Balancer Pools** - Balancer pools’ smart contracts determine how traders exchange tokens. They allow customization and also allows anybody to create a pool
+3. **Smart Order Router (SOR)** - SOR identifies the best price for selling and buying orders in a transaction in either one or multiple liquidity pools. It increases parallel to the expansion and diversity of the Balancer pools as it gets new options to check from.
+4. **Merkle Orchard Smart Contract** - The Merkle Orchard is a smart contract used to claim the weekly Liquidity Mining distributions
+5. **Balancer Gnosis Protocol (BGP)** - The Balancer Gnosis Protocol is the default trading interface on the Balancer platform
+
+
+
+
+
+
+
+
 
     
 
