@@ -1,7 +1,7 @@
 categories:
   - introduction
 content: Talks about all the major features of Balancer AMM
-created: '2022-10-30T17:49:58.473Z'
+created: '2022-10-30T17:55:10.347Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -188,6 +188,17 @@ steps:
     name: Balancer Pools
     stepItems: []
     uuid: 529dfb20-16e9-41ac-9434-f58c39264fa0
+  - content: >+
+      In April 2022, Balancer adopted the vote escrowed model (veModel). Under
+      this model, users who lock their veBAL tokens for a longer period of time
+      have more voting rights in the Protocol. Additionally, users who invest in
+      the BAL/WETH 80/20 Pool are rewarded with BPT (Balancer Pool Token). veBAL
+      lockers also receive 75% of protocol fees, while the remaining 50% will go
+      to those who hold BAL tokens.
+
+    name: veBAL
+    stepItems: []
+    uuid: c6d05771-ed0f-4caf-afb1-293dc690981d
 thumbnail: >-
   https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi
 uuid: intro-to-balancer-amm-balancer
