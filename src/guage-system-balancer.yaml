@@ -1,6 +1,6 @@
 categories: []
 content: New Guide
-created: '2022-11-07T21:33:19.214Z'
+created: '2022-11-07T21:34:07.407Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -28,7 +28,7 @@ steps:
       ## BAL Emissions
 
       Currently the inflation is 145,000 BAL per week. Every 4 years the
-      inflation qill be halved, with gradual steps every year starting one year
+      inflation will be halved, with gradual steps every year starting one year
       after the launch of the new tokenomics system. This would mean a final BAL
       supply of about 94,000,000 BAL.
 
