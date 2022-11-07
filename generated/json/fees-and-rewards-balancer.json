@@ -3,7 +3,7 @@
     "governance"
   ],
   "content": "Tells about all the fees and rewards in Balancer",
-  "created": "2022-11-07T18:39:49.128Z",
+  "created": "2022-11-07T18:57:46.673Z",
   "guideIntegrations": {
     "discordRoleIds": []
   },
@@ -14,12 +14,12 @@
   "showIncorrectOnCompletion": true,
   "steps": [
     {
-      "content": "\nIntroduction Comments \n        ",
-      "name": "Introduction",
+      "content": "\nThere are a few different types of fees on Balancer, each one collected in order to support a healthy ecosystem. For example, Liquidity Providers collect swap fees from users who trade with pools; this acts as an incentive for them to continue providing liquidity, which helps facilitate trades.        \n\n### Swap Fees\nWhen traders use a pool to trade, they pay swap fees. For pools that inherit from BasePool, these fees can be customized with a minimum value of 0.0001% and a maximum value of 10%. \n\nThe fees go to Liquidity Providers in exchange for them putting their tokens in the pool to facilitate trades. Trade fees are collected at the time of a swap, and it goes directly into the pool, growing the pool's balance\n\n### Protocol Fees \nProtocol Fees are a percentage of swap fees collected by pools. These go to the DAO Treasury to be used or held as the DAO sees fit. At deployment, Protocol Fees for swaps were set to 0%. These fees were activated by a governance vote and were later raised to 50% by a subsequent proposal. For the most up-to-date protocol fee data, please call `getSwapFeePercentage()` on the ProtocolFeesCollector contract.\n\nFor example, if a pool has a 1% swap fee, and there was a 10% protocol swap fee, 0.9% of each trade would be collected for the LPs, and 0.1% would be collected to the protocol fee collector contract.\n\n### Static and Dynamic Fees\nAt the time of pool creation, the pool creator defines the fee and the owner. If the owner is set to an uncontrolled address (typically the zero address) then the swap fee is static. If the owner sets it to a controlled address, that address can set the fee at will, therefore making the swap fee dynamic.\n\n### Flash Loan Fees\nFlash Loan fees are a type of Protocol Fee on Balancer. The fees collected as interest on flash loans go to the DAO Treasury.",
+      "name": "Fees Overview",
       "stepItems": [],
       "uuid": "77118b55-d4e8-491c-8ea9-c5818799f50d"
     }
   ],
   "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi",
-  "uuid": "59bd310d-2e4b-4dce-b052-96b23bf4b9f9"
+  "uuid": "fees-and-rewards-balancer"
 }
