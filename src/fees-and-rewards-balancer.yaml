@@ -1,7 +1,7 @@
 categories:
   - governance
 content: Tells about all the fees and rewards in Balancer
-created: '2022-11-07T18:57:46.673Z'
+created: '2022-11-07T18:58:08.601Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -19,7 +19,7 @@ steps:
       trades.        
 
 
-      ### Swap Fees
+      ## Swap Fees
 
       When traders use a pool to trade, they pay swap fees. For pools that
       inherit from BasePool, these fees can be customized with a minimum value
@@ -32,7 +32,7 @@ steps:
       balance
 
 
-      ### Protocol Fees 
+      ## Protocol Fees 
 
       Protocol Fees are a percentage of swap fees collected by pools. These go
       to the DAO Treasury to be used or held as the DAO sees fit. At deployment,
@@ -47,7 +47,7 @@ steps:
       would be collected to the protocol fee collector contract.
 
 
-      ### Static and Dynamic Fees
+      ## Static and Dynamic Fees
 
       At the time of pool creation, the pool creator defines the fee and the
       owner. If the owner is set to an uncontrolled address (typically the zero
@@ -56,7 +56,7 @@ steps:
       fee dynamic.
 
 
-      ### Flash Loan Fees
+      ## Flash Loan Fees
 
       Flash Loan fees are a type of Protocol Fee on Balancer. The fees collected
       as interest on flash loans go to the DAO Treasury.
