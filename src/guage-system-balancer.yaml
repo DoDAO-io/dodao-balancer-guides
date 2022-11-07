@@ -1,6 +1,6 @@
 categories: []
 content: New Guide
-created: '2022-11-07T21:26:44.910Z'
+created: '2022-11-07T21:31:19.148Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -23,6 +23,18 @@ steps:
       hold
 
 
+      Currently the inflation is 145,000 BAL per week. Every 4 years the
+      inflation qill be halved, with gradual steps every year starting one year
+      after the launch of the new tokenomics system. This would mean a final BAL
+      supply of about 94,000,000 BAL.
+
+
+      In the Guage System, all liquidity mining BAL minted will be distributed
+      through the gauge system. Gauges are contracts that allow LPs (liquidity
+      providers) to stake their BPT (Balancer Pool Token) and periodically claim
+      BAL from liquidity mining.
+
+
       There are five gauge types: 
 
       1. **Liquidity Mining Committee** - This is an allowance for the Liquidity
@@ -31,17 +43,20 @@ steps:
       veBAL to ensure they get LM through their own gauge. The LM committee
       should not accumulate BAL, that is, it commits to sending any unused BAL
       for any given week to the DAO treasury (not later than 7 days from
-      receiving it).
+      receiving it). This pool gets  10% of LM Rewards i.e. 14,500 BAL
 
       2. **veBAL** - It is meant to keep locking 80/20 BPT attractive as it
       helps veBAL holders avoid dilution and compensates for the impermanent
-      loss risk of LPing.
+      loss risk of LPing. This pool gets  10% of LM Rewards i.e. 14,500 BAL
 
-      3. **Ethereum Mainnet Pools** - LM that is distributed to mainnet
+      3. **Ethereum Mainnet Pools** - LM that is distributed to mainnet. This
+      pool gets  56% of LM Rewards i.e. 81,200 BAL
 
-      4. **Polygon Pools** - LM that is distributed to Polygon
+      4. **Polygon Pools** - LM that is distributed to Polygon. This pool gets 
+      17% of LM Rewards i.e. 24,650 BAL
 
-      5. **Arbitrum Pools** - LM that is distributed to Arbitrum
+      5. **Arbitrum Pools** - LM that is distributed to Arbitrum. This pool
+      gets  7% of LM Rewards i.e. 10,150 BAL
     name: Introduction
     stepItems: []
     uuid: 919925f9-6f05-4307-8b91-5b24ba48c80f
@@ -71,4 +86,4 @@ steps:
     uuid: 527e1ff7-1ae8-45ce-8530-0e1f2b302e47
 thumbnail: >-
   https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi
-uuid: feeff6ab-392e-4edc-b35a-412c5af4ead8
+uuid: guage-system-balancer
