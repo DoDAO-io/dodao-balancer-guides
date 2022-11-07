@@ -1,0 +1,74 @@
+categories: []
+content: New Guide
+created: '2022-11-07T21:26:44.910Z'
+guideIntegrations:
+  discordRoleIds: []
+guideType: course
+key: guage-system-balancer
+name: Guage System
+publishStatus: Live
+showIncorrectOnCompletion: true
+steps:
+  - content: >-
+      Since transitioning to the veModel, BAL emissions get distributed through
+      the gauge system. Gauges allow LPs (liquidity providers) to stake their
+      BPT to claim BAL from liquidity mining. The amount that each LP receives
+      depends on the following:
+
+      1. The allocation of BAL that the Pool receives
+
+      2. The share of the LP in the Pool
+
+      3. The boost applied to LP share based on the amount of veBAL that they
+      hold
+
+
+      There are five gauge types: 
+
+      1. **Liquidity Mining Committee** - This is an allowance for the Liquidity
+      Mining committee to grant LM to strategic partnerships for Balancer
+      protocol with the expectation that long term these partners will accrue
+      veBAL to ensure they get LM through their own gauge. The LM committee
+      should not accumulate BAL, that is, it commits to sending any unused BAL
+      for any given week to the DAO treasury (not later than 7 days from
+      receiving it).
+
+      2. **veBAL** - It is meant to keep locking 80/20 BPT attractive as it
+      helps veBAL holders avoid dilution and compensates for the impermanent
+      loss risk of LPing.
+
+      3. **Ethereum Mainnet Pools** - LM that is distributed to mainnet
+
+      4. **Polygon Pools** - LM that is distributed to Polygon
+
+      5. **Arbitrum Pools** - LM that is distributed to Arbitrum
+    name: Introduction
+    stepItems: []
+    uuid: 919925f9-6f05-4307-8b91-5b24ba48c80f
+  - content: ''
+    name: Introduction Evaluation
+    stepItems:
+      - label: Full Name
+        required: false
+        type: PublicShortInput
+        uuid: e1dc5501-8886-4dc9-bd6e-1066970575ba
+      - answerKeys:
+          - dog_or_cat
+          - only_dog
+          - only_cat
+        choices:
+          - content: Dog And Cat
+            key: dog_and_cat
+          - content: Dog Or Cat
+            key: dog_or_cat
+          - content: Only Dog
+            key: only_dog
+          - content: Only Cat
+            key: only_cat
+        content: Dog or a Cat, Do or a Cat, Dog or a Cat
+        type: MultipleChoice
+        uuid: 65af479d-9d3c-4b27-8ea8-9ec9151a6257
+    uuid: 527e1ff7-1ae8-45ce-8530-0e1f2b302e47
+thumbnail: >-
+  https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi
+uuid: feeff6ab-392e-4edc-b35a-412c5af4ead8
