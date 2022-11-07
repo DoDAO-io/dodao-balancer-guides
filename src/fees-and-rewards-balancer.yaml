@@ -1,7 +1,7 @@
 categories:
   - governance
 content: Tells about all the fees and rewards in Balancer
-created: '2022-11-07T19:16:44.081Z'
+created: '2022-11-07T19:20:58.506Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -70,6 +70,19 @@ steps:
       tokens in the pool to facilitate trades. Trade fees are collected at the
       time of a swap, and it goes directly into the pool, growing the pool's
       balance
+
+
+      Along with the Swap fees, eligible pools also get Liquidity Mining rewards
+      based on the new Gauge System
+
+      The amount received by each LP will depend on:
+
+      1. How much the pool they are providing liquidity to receives
+
+      2. What share of the pool’s liquidity they have
+
+
+      They can also get their rewards boosted by securing veBAL
 
 
       ## Rewards for veBAL Holders
