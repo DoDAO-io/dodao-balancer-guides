@@ -1,7 +1,7 @@
 categories:
   - governance
 content: Tells about all the fees and rewards in Balancer
-created: '2022-11-07T19:16:11.421Z'
+created: '2022-11-07T19:16:44.081Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -79,17 +79,17 @@ steps:
       benefiting from other rewards.
 
 
-      1. 75% of protocol revenues collected by the protocol fee collector gets
+      * 75% of protocol revenues collected by the protocol fee collector gets
       distributed to veBAL holders. The other 25% of the fees will be kept by
       the DAO treasury as a reserve.
 
 
-      2. Also 10% of the BAL minted every week i.e. 14,500 BAL goes to the veBAL
+      * Also 10% of the BAL minted every week i.e. 14,500 BAL goes to the veBAL
       holders.  It helps veBAL holders avoid dilution and compensates for the
       impermanent loss risk of LPing 
 
 
-      3. veBAL holders can also claim Bribes from
+      * veBAL holders can also claim Bribes from
       https://hiddenhand.finance/balancer
 
 
