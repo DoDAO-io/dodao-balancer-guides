@@ -1,0 +1,25 @@
+{
+  "categories": [
+    "governance"
+  ],
+  "content": "Tells about all the fees and rewards in Balancer",
+  "created": "2022-11-07T18:39:49.128Z",
+  "guideIntegrations": {
+    "discordRoleIds": []
+  },
+  "guideType": "course",
+  "key": "fees-and-rewards-balancer",
+  "name": "Fees and Rewards",
+  "publishStatus": "Live",
+  "showIncorrectOnCompletion": true,
+  "steps": [
+    {
+      "content": "\nIntroduction Comments \n        ",
+      "name": "Introduction",
+      "stepItems": [],
+      "uuid": "77118b55-d4e8-491c-8ea9-c5818799f50d"
+    }
+  ],
+  "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi",
+  "uuid": "59bd310d-2e4b-4dce-b052-96b23bf4b9f9"
+}
