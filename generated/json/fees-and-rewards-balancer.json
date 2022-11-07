@@ -3,7 +3,7 @@
     "governance"
   ],
   "content": "Tells about all the fees and rewards in Balancer",
-  "created": "2022-11-07T19:20:58.506Z",
+  "created": "2022-11-07T19:36:28.743Z",
   "guideIntegrations": {
     "discordRoleIds": []
   },
@@ -20,7 +20,7 @@
       "uuid": "77118b55-d4e8-491c-8ea9-c5818799f50d"
     },
     {
-      "content": "## Rewards for Liquidity Providers\nSwap fees go to Liquidity Providers in exchange for them putting their tokens in the pool to facilitate trades. Trade fees are collected at the time of a swap, and it goes directly into the pool, growing the pool's balance\n\nAlong with the Swap fees, eligible pools also get Liquidity Mining rewards based on the new Gauge System\nThe amount received by each LP will depend on:\n1. How much the pool they are providing liquidity to receives\n2. What share of the pool’s liquidity they have\n\nThey can also get their rewards boosted by securing veBAL\n\n## Rewards for veBAL Holders\n**veBAL** - After locking the 80/20 BAL/ETH BPT, the user have a non-zero balance of veBAL and will be able to help govern Balancer protocol, also benefiting from other rewards.\n\n* 75% of protocol revenues collected by the protocol fee collector gets distributed to veBAL holders. The other 25% of the fees will be kept by the DAO treasury as a reserve.\n\n* Also 10% of the BAL minted every week i.e. 14,500 BAL goes to the veBAL holders.  It helps veBAL holders avoid dilution and compensates for the impermanent loss risk of LPing \n\n* veBAL holders can also claim Bribes from https://hiddenhand.finance/balancer\n\n## Rewards for Liquidity Providers with veBAL\n\n",
+      "content": "## Rewards for Liquidity Providers\nSwap fees go to Liquidity Providers in exchange for them putting their tokens in the pool to facilitate trades. Trade fees are collected at the time of a swap, and it goes directly into the pool, growing the pool's balance\n\nAlong with the Swap fees, eligible pools also get Liquidity Mining rewards based on the new Gauge System\nThe amount received by each LP will depend on:\n1. How much the pool they are providing liquidity to receives\n2. What share of the pool’s liquidity they have\n\nThey can also get their rewards boosted by securing veBAL\n\n## Rewards for veBAL Holders\n**veBAL** - After locking the 80/20 BAL/ETH BPT, the user have a non-zero balance of veBAL and will be able to help govern Balancer protocol, also benefiting from other rewards.\n\n* 75% of protocol revenues collected by the protocol fee collector gets distributed to veBAL holders. The other 25% of the fees will be kept by the DAO treasury as a reserve.\n\n* Also 10% of the BAL minted every week i.e. 14,500 BAL goes to the veBAL holders.  It helps veBAL holders avoid dilution and compensates for the impermanent loss risk of LPing \n\n* veBAL holders can also claim Bribes from https://hiddenhand.finance/balancer\n\n## Rewards for Liquidity Providers with veBAL\nThe veBAL system implements a multiplier based upon the time locking mechanism. Locking the same amount of BPT for a longer period will yield a higher incentive multiplier for a user.\n\nThe maximum boost possible for liquidity mining incentives is 2.5x. For tooling, calculate your boost [here](https://balancer.tools/boost).\n",
       "name": "Rewards Overview",
       "stepItems": [],
       "uuid": "6c5ee5ec-b371-4dcc-b902-0601728b12ad"

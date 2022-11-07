@@ -1,7 +1,7 @@
 categories:
   - governance
 content: Tells about all the fees and rewards in Balancer
-created: '2022-11-07T19:20:58.506Z'
+created: '2022-11-07T19:36:28.743Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -63,7 +63,7 @@ steps:
     name: Fees Overview
     stepItems: []
     uuid: 77118b55-d4e8-491c-8ea9-c5818799f50d
-  - content: >+
+  - content: >
       ## Rewards for Liquidity Providers
 
       Swap fees go to Liquidity Providers in exchange for them putting their
@@ -108,6 +108,13 @@ steps:
 
       ## Rewards for Liquidity Providers with veBAL
 
+      The veBAL system implements a multiplier based upon the time locking
+      mechanism. Locking the same amount of BPT for a longer period will yield a
+      higher incentive multiplier for a user.
+
+
+      The maximum boost possible for liquidity mining incentives is 2.5x. For
+      tooling, calculate your boost [here](https://balancer.tools/boost).
     name: Rewards Overview
     stepItems: []
     uuid: 6c5ee5ec-b371-4dcc-b902-0601728b12ad
