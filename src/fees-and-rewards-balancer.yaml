@@ -1,7 +1,7 @@
 categories:
   - governance
 content: Tells about all the fees and rewards in Balancer
-created: '2022-11-07T19:37:08.016Z'
+created: '2022-11-07T21:58:05.372Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -118,6 +118,63 @@ steps:
     name: Rewards Overview
     stepItems: []
     uuid: 6c5ee5ec-b371-4dcc-b902-0601728b12ad
+  - content: >-
+      ## Gauge System Overview
+
+      Since transitioning to the veModel, BAL emissions get distributed through
+      the gauge system. Gauges allow LPs (liquidity providers) to stake their
+      BPT to claim BAL from liquidity mining. The amount that each LP receives
+      depends on the following:
+
+      1. The allocation of BAL that the Pool receives
+
+      2. The share of the LP in the Pool
+
+      3. The boost applied to LP share based on the amount of veBAL that they
+      hold
+
+
+      ## BAL Emissions
+
+      Currently the inflation is 145,000 BAL per week. Every 4 years the
+      inflation will be halved, with gradual steps every year starting one year
+      after the launch of the new tokenomics system. This would mean a final BAL
+      supply of about 94,000,000 BAL.
+
+
+      In the Guage System, all liquidity mining BAL minted will be distributed
+      through the gauge system. Gauges are contracts that allow LPs (liquidity
+      providers) to stake their BPT (Balancer Pool Token) and periodically claim
+      BAL from liquidity mining.
+
+
+      ## Gauge Types
+
+      There are five gauge types: 
+
+      1. **Liquidity Mining Committee** - This is an allowance for the Liquidity
+      Mining committee to grant LM to strategic partnerships for Balancer
+      protocol with the expectation that long term these partners will accrue
+      veBAL to ensure they get LM through their own gauge. The LM committee
+      should not accumulate BAL, that is, it commits to sending any unused BAL
+      for any given week to the DAO treasury (not later than 7 days from
+      receiving it). This pool gets  10% of LM Rewards i.e. 14,500 BAL
+
+      2. **veBAL** - It is meant to keep locking 80/20 BPT attractive as it
+      helps veBAL holders avoid dilution and compensates for the impermanent
+      loss risk of LPing. This pool gets  10% of LM Rewards i.e. 14,500 BAL
+
+      3. **Ethereum Mainnet Pools** - LM that is distributed to mainnet. This
+      pool gets  56% of LM Rewards i.e. 81,200 BAL
+
+      4. **Polygon Pools** - LM that is distributed to Polygon. This pool gets 
+      17% of LM Rewards i.e. 24,650 BAL
+
+      5. **Arbitrum Pools** - LM that is distributed to Arbitrum. This pool
+      gets  7% of LM Rewards i.e. 10,150 BAL
+    name: Gauge System
+    stepItems: []
+    uuid: fa85364e-1bf5-44e7-a33b-704b71e120ad
   - content: ''
     name: Your Info
     stepItems:
