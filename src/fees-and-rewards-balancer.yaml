@@ -1,7 +1,7 @@
 categories:
   - governance
 content: Tells about all the fees and rewards in Balancer
-created: '2022-11-07T19:36:28.743Z'
+created: '2022-11-07T19:37:08.016Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -118,6 +118,14 @@ steps:
     name: Rewards Overview
     stepItems: []
     uuid: 6c5ee5ec-b371-4dcc-b902-0601728b12ad
+  - content: ''
+    name: Your Info
+    stepItems:
+      - label: Name
+        required: true
+        type: PublicShortInput
+        uuid: 3731ceee-de58-4dc0-be28-6e2c96739720
+    uuid: beb35295-5603-410c-84a6-56ed5139dc0d
 thumbnail: >-
   https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi
 uuid: fees-and-rewards-balancer
