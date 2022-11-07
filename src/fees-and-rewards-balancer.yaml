@@ -1,7 +1,7 @@
 categories:
   - governance
 content: Tells about all the fees and rewards in Balancer
-created: '2022-11-07T18:58:08.601Z'
+created: '2022-11-07T19:16:11.421Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -63,6 +63,41 @@ steps:
     name: Fees Overview
     stepItems: []
     uuid: 77118b55-d4e8-491c-8ea9-c5818799f50d
+  - content: >+
+      ## Rewards for Liquidity Providers
+
+      Swap fees go to Liquidity Providers in exchange for them putting their
+      tokens in the pool to facilitate trades. Trade fees are collected at the
+      time of a swap, and it goes directly into the pool, growing the pool's
+      balance
+
+
+      ## Rewards for veBAL Holders
+
+      **veBAL** - After locking the 80/20 BAL/ETH BPT, the user have a non-zero
+      balance of veBAL and will be able to help govern Balancer protocol, also
+      benefiting from other rewards.
+
+
+      1. 75% of protocol revenues collected by the protocol fee collector gets
+      distributed to veBAL holders. The other 25% of the fees will be kept by
+      the DAO treasury as a reserve.
+
+
+      2. Also 10% of the BAL minted every week i.e. 14,500 BAL goes to the veBAL
+      holders.  It helps veBAL holders avoid dilution and compensates for the
+      impermanent loss risk of LPing 
+
+
+      3. veBAL holders can also claim Bribes from
+      https://hiddenhand.finance/balancer
+
+
+      ## Rewards for Liquidity Providers with veBAL
+
+    name: Rewards Overview
+    stepItems: []
+    uuid: 6c5ee5ec-b371-4dcc-b902-0601728b12ad
 thumbnail: >-
   https://d31h13bdjwgzxs.cloudfront.net/QmWy8EeMnxqx96VEPx2NBwzqtKxvMQqVVYvmPKgAYS2cUi
 uuid: fees-and-rewards-balancer
