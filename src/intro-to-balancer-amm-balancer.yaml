@@ -1,7 +1,7 @@
 categories:
   - introduction
 content: Talks about all the major features of Balancer AMM
-created: '2022-11-07T22:01:06.645Z'
+created: '2022-11-08T22:20:34.167Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -56,6 +56,38 @@ steps:
     name: Introduction
     stepItems: []
     uuid: 746e2337-7ea8-400c-a60f-5ca33ea03c36
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - fdb21e52
+        choices:
+          - content: Sam Bankman-Fried
+            key: 90d9e6a3
+          - content: Fernando Martinelli
+            key: fdb21e52
+          - content: Vitalik Buterin
+            key: 27c4b3a5
+          - content: Satoshi Nakamoto
+            key: bc17d20d
+        content: Who founded Balancer?
+        type: SingleChoice
+        uuid: 8f8f353f-09c2-4b21-8747-0ffead8af8db
+      - answerKeys:
+          - 530eca9e
+        choices:
+          - content: Automated Market Maker
+            key: 530eca9e
+          - content: Lending and Borrowing Protocol
+            key: 0b8e913d
+          - content: Staking Protocol
+            key: f9d1f215
+          - content: Centralized Crypto Exchange
+            key: 5332bcd2
+        content: What is Balancer?
+        type: SingleChoice
+        uuid: 9fcfb563-a2a4-4daa-8c00-3fc39cac8785
+    uuid: 81fdc8e1-524f-4f84-b558-c677ebab96c3
   - content: >-
       The Vault is the smart contract used by Balancer. It is the smart contract
       that manages and holds all the tokens in a Balancer pool. It is also the
@@ -83,6 +115,29 @@ steps:
     name: The Vault
     stepItems: []
     uuid: 67bcf13f-db72-46ae-856b-1616eba25d36
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - f309ca97
+        choices:
+          - content: >-
+              It is the smart contract that records and saves all the
+              transactions
+            key: ae3fccfd
+          - content: It is the smart contract that manages routing of all the orders
+            key: 6a5ec34d
+          - content: >-
+              It is the smart contract that manages and holds all the tokens in
+              a Balancer pool. It is also the portal through which most Balancer
+              operations occur.
+            key: f309ca97
+          - content: It is the smart contract that holds all the veBAL
+            key: b9716411
+        content: Which one of these best defines a Balancer Vault?
+        type: SingleChoice
+        uuid: d42d3fe4-e9fa-444a-9e26-cfd6ee7e24f6
+    uuid: ab564adc-c17b-489c-93a3-7acda060894f
   - content: >-
       Pools are the foundation of the Balancer Protocol and smart contracts that
       through which traders can swap between tokens on Balancer. What makes
@@ -188,15 +243,45 @@ steps:
     name: Balancer Pools
     stepItems: []
     uuid: 529dfb20-16e9-41ac-9434-f58c39264fa0
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - 95df8d90
+        choices:
+          - content: Liquidity Bootstrapping Pools
+            key: 91a8d8b5
+          - content: MetaStable Pools
+            key: d1c7f723
+          - content: Managed Pools
+            key: '44414886'
+          - content: Centralized Pools
+            key: 95df8d90
+        content: Which of these pools is not present in Balancer?
+        type: SingleChoice
+        uuid: 52562825-b4ab-4760-8687-0c98d8c0ee7f
+    uuid: 6b5af2c6-1489-4cdc-a0d7-51ad37bd8281
   - content: >
       ## veBAL
 
       In April 2022, Balancer adopted the vote escrowed model (veModel). Under
       this model, users who lock their veBAL tokens for a longer period of time
-      have more voting rights in the Protocol. Additionally, users who invest in
-      the BAL/WETH 80/20 Pool are rewarded with BPT (Balancer Pool Token). veBAL
-      lockers also receive 75% of protocol fees. In addition to 75% of protocol
-      revenues, veBAL holders also get 10% of all BAL minted weekly.
+      have more voting rights in the Protocol. 
+
+
+      Instead of pure BAL, BPT of the 80/20 BAL/ETH pool can be locked into
+      veBAL, similar to how CRV can be locked into veCRV. This has the big
+      advantage of keeping BAL liquid as well as setting a precedent for other
+      teams to do the same with their 80/20 Balancer pools. Alternatives to
+      veBAL have been considered, like vebptBAL. The simplicity of veBAL — even
+      though what is locked is not pure BAL — has however been the preferred
+      option.
+
+
+      Users who invest in the BAL/WETH 80/20 Pool are rewarded with BPT
+      (Balancer Pool Token). veBAL lockers also receive 75% of protocol fees. In
+      addition to 75% of protocol revenues, veBAL holders also get 10% of all
+      BAL minted weekly.
 
 
       This means that:
@@ -226,6 +311,41 @@ steps:
     name: veBAL
     stepItems: []
     uuid: c6d05771-ed0f-4caf-afb1-293dc690981d
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - be878d37
+        choices:
+          - content: By locking BPT of the 80/20 BAL/ETH pool
+            key: be878d37
+          - content: By locking BAL for 1 year
+            key: f13d8f7a
+          - content: By locking ETH for 1 year
+            key: '24198419'
+          - content: By locking USDC
+            key: 7513a782
+        content: How can one receive veBAL?
+        type: SingleChoice
+        uuid: b643f4d7-f760-4ae1-8033-7b9d601dd130
+      - answerKeys:
+          - 849f8f0e
+          - 31415b4f
+        choices:
+          - content: veBAL holders get 10% of all fees colleted
+            key: a6ad50ad
+          - content: >-
+              75% of all fees generated by the protocol are proportionally
+              distributed to veBAL holders
+            key: 31415b4f
+          - content: veBAL holders get 10% of all BAL minted weekly
+            key: 849f8f0e
+          - content: veBAL holders also get 2000 USDC every week
+            key: d29c2e1f
+        content: What are the additional benefits that veBAL holders receive?
+        type: MultipleChoice
+        uuid: c668712e-bf79-450c-937d-8a552e9daba2
+    uuid: 4596a44f-aadc-45e5-aa7b-65203cc34da9
   - content: >-
       ## Gauge System Overview
 
@@ -283,5 +403,13 @@ steps:
     name: Gauge System
     stepItems: []
     uuid: 9badaf0c-6dd1-4f53-977c-a4bc0e040b0b
+  - content: ''
+    name: Your Info
+    stepItems:
+      - label: Name
+        required: true
+        type: PublicShortInput
+        uuid: b6fe1c46-5dc5-4f74-9aa5-4361188cbabe
+    uuid: 4cf391d4-f4b7-4e1a-ab45-29c3973d704a
 thumbnail: https://d31h13bdjwgzxs.cloudfront.net/academy/balancer/balancer_amm.png
 uuid: intro-to-balancer-amm-balancer
