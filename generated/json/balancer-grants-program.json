@@ -3,7 +3,7 @@
     "community"
   ],
   "content": "This guide gives information on the Balancer Grants program",
-  "created": "2022-10-07T00:55:02.402Z",
+  "created": "2022-11-08T22:49:18.223Z",
   "guideIntegrations": {
     "discordRoleIds": []
   },
@@ -23,34 +23,6 @@
       "content": "",
       "name": "Evaluation",
       "stepItems": [
-        {
-          "answerKeys": [
-            "dog_or_cat",
-            "only_cat",
-            "dog_and_cat"
-          ],
-          "choices": [
-            {
-              "content": "It is an automated portfolio manager",
-              "key": "dog_and_cat"
-            },
-            {
-              "content": "Fees are collected from traders to rebalance portfolios",
-              "key": "dog_or_cat"
-            },
-            {
-              "content": "It has an orderbook for traders",
-              "key": "only_dog"
-            },
-            {
-              "content": "It is a trading platform",
-              "key": "only_cat"
-            }
-          ],
-          "content": "Which of these is TRUE about Balancer?",
-          "type": "MultipleChoice",
-          "uuid": "f8f11050-f5a7-498b-b76b-c0e7af45a63c"
-        },
         {
           "answerKeys": [
             "48745f03"
