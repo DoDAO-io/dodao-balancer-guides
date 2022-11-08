@@ -1,7 +1,7 @@
 categories:
   - governance
 content: Tells about all the fees and rewards in Balancer
-created: '2022-11-07T21:58:05.372Z'
+created: '2022-11-08T22:36:07.460Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: course
@@ -63,6 +63,24 @@ steps:
     name: Fees Overview
     stepItems: []
     uuid: 77118b55-d4e8-491c-8ea9-c5818799f50d
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - 208c8905
+        choices:
+          - content: It goes back to the users to incentivize them
+            key: 34c5b3da
+          - content: It goes directly into the pool, growing the pool's balance
+            key: 208c8905
+          - content: It go to the protocol rewards
+            key: 625735ec
+          - content: It go to the veBAL Holders
+            key: 8f27504c
+        content: Where are the swap fee directed?
+        type: SingleChoice
+        uuid: 0fa4a3ad-8594-4b29-9a4d-0f8e4f474fbe
+    uuid: a5ba2c41-01a1-4f13-a0c6-d46c6f1db849
   - content: >
       ## Rewards for Liquidity Providers
 
@@ -118,6 +136,26 @@ steps:
     name: Rewards Overview
     stepItems: []
     uuid: 6c5ee5ec-b371-4dcc-b902-0601728b12ad
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - '43528928'
+        choices:
+          - content: How much the pool they are providing liquidity to receives
+            key: f15302d1
+          - content: What share of the pool’s liquidity they have
+            key: '80352977'
+          - content: How much are they boosted by securing veBAL
+            key: e92966ef
+          - content: How much BAL do they hold
+            key: '43528928'
+        content: >-
+          Which one of these is not a parameter while distributing the Liquidity
+          Mining rewards to Liquidity Providers?
+        type: SingleChoice
+        uuid: b51fb685-3d79-4373-82ed-28473193430c
+    uuid: ac4f893e-7f4e-4340-bd13-548dae21efbb
   - content: >-
       ## Gauge System Overview
 
@@ -175,6 +213,38 @@ steps:
     name: Gauge System
     stepItems: []
     uuid: fa85364e-1bf5-44e7-a33b-704b71e120ad
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - 3e63f2b8
+        choices:
+          - content: 145,00 BAL
+            key: 124ef472
+          - content: 145,000 BAL
+            key: 3e63f2b8
+          - content: 1450 BAL
+            key: 4e14c499
+          - content: 145,0000 BAL
+            key: 31517faa
+        content: How much BAL are minted weekly as part of the inflation schedule?
+        type: SingleChoice
+        uuid: 3385afdc-cb3a-4d7a-af90-5df8cb7ee81b
+      - answerKeys:
+          - aa4678ee
+        choices:
+          - content: 20%
+            key: 461aef99
+          - content: 25%
+            key: a75dcfd4
+          - content: 50%
+            key: 242ea686
+          - content: 10%
+            key: aa4678ee
+        content: What percentage of BAL minted goes to veBAL gauge?
+        type: SingleChoice
+        uuid: 9502fe67-9226-4688-8c75-f1db6786d676
+    uuid: 9120d611-b8b1-42d3-a8d9-19280b5d2f35
   - content: ''
     name: Your Info
     stepItems:
