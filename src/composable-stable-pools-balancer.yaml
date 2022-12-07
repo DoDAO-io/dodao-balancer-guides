@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T18:45:31.239Z'
+created: '2022-12-07T21:34:39.731Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -62,8 +62,16 @@ steps:
       not extremely unbalanced
 
 
-      ![StableSwap approaches Constant Product as A->0 and Constant Sum as
-      A->∞](https://github.com/balancer-labs/docs-v2/raw/fc4f11145504bf9bc2dbed3ac30b6ffbe704d0aa/.gitbook/assets/output%20(1).gif)
+      <div align="center">
+
+      <img width="560" height="315"
+      src="https://github.com/balancer-labs/docs-v2/raw/fc4f11145504bf9bc2dbed3ac30b6ffbe704d0aa/.gitbook/assets/output%20(1).gif"
+      />
+
+      </div>
+
+      StableSwap approaches Constant Product as A->0 and Constant Sum as A->∞
+
 
 
       $$
