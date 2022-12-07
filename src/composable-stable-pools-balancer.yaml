@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T22:33:01.389Z'
+created: '2022-12-07T22:33:29.906Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -177,7 +177,6 @@ steps:
       Constructor of ComposableStablePool takes the following struct as params
 
       ```solidity
-
           struct NewPoolParams {
               IVault vault;
               IProtocolFeePercentagesProvider protocolFeeProvider;
@@ -193,7 +192,6 @@ steps:
               uint256 bufferPeriodDuration;
               address owner;
           }
-
       ```
     name: Rate Provides
     stepItems: []
