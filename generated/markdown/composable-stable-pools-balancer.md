@@ -1,0 +1,74 @@
+## Header
+This is the course header. This will be added on top of every page. Go to [DoDAO.io](https://www.dodao.io) to know more.
+
+---
+
+## Composable Stable Pools
+
+
+## Background
+
+
+The DeFi ecosystem is full of correlated assets. We see many different tokens based on ETH, for example: wstETH, wETH, aETH, cETH, 
+or BTC eg: renBTC, sBTC, WBTC, aWBTC, cWBTC.
+
+If we try to lend or stake our assets on many of the DeFi Protocols, we get a correlated asset in return.
+
+There are multiple ways to manage risk when investing an asset. One approach is to spread your investments across multiple 
+platforms. This can be complex, and you need to understand the workflow of each platform. Another, easier way is to swap 
+your token for different ones that are based on the same core asset. This prevents complexity and extra gas fees, but 
+still ensures diversification and returns on your investments.
+
+Being able to swap large quantities of correlated assets quickly and with minimal price slippage is a big advantage for both 
+institutional investors and retail users in DeFi. For liquidity providers, in this case, impermanent loss is not as big of a 
+concern (except in rare cases where the depeg's happen).        
+
+    
+
+
+---
+## Stable Math
+
+## Stable Math
+Pools that use a constant product invariant (x*y=k) might not be the best option as there can be a lot of slippage, which 
+is quite undesirable in the scenario of correlated assets. Constant sum invariant (x+y=k) seems to be more relevant but 
+can end the pool having just single type of tokens.
+
+Stable Math's Invariant solves both of these problems and can keep prices more equal as long as the liquidity pool is 
+not extremely unbalanced
+
+![StableSwap approaches Constant Product as A->0 and Constant Sum as A->∞](https://github.com/balancer-labs/docs-v2/raw/fc4f11145504bf9bc2dbed3ac30b6ffbe704d0aa/.gitbook/assets/output%20(1).gif)
+
+ ```maths 
+ $$
+ A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
+ $$
+
+ Where:
+ 
+ * $$n$$ is the number of tokens
+ * $$x_i$$ is is balance of token $$i$$
+ * $$A$$ is the amplification parameter
+
+ ```
+More detail about stable math can be found [here](https://docs.balancer.fi/concepts/math/stable-math)
+
+## Amplification Parameter
+The A-Factor, also known as the amplification parameter, plays a major role in how flattened the curve will be. This 
+parameter controls how much slippage occurs, with higher values resulting in less slippage.
+
+If the A-Factor is set to zero, the curve will follow a similar path to x*y=k, but with increased slippage. The 
+illustration below shows the stable swap invariant with the A-Factor set to zero. Notice the green line:
+
+The higher the A-Factor is set, the more flattened the curve becomes.
+
+We can pass `amplificationParameter` to the constructor when creating instance of ComposableStablePool.
+
+
+    
+
+
+---
+## Footer
+This is the git footer. This will be added on top of every page. Go to [DoDAO.io](https://www.dodao.io) to know more.
+    

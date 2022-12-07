@@ -31,6 +31,23 @@ Flash Loan fees are a type of Protocol Fee on Balancer. The fees collected as in
 
 
 ---
+## Evaluation
+
+
+
+
+
+##### Where are the swap fee directed?  
+
+- [ ]  It goes back to the users to incentivize them
+- [x]  It goes directly into the pool, growing the pool's balance
+- [ ]  It go to the protocol rewards
+- [ ]  It go to the veBAL Holders
+
+    
+
+
+---
 ## Rewards Overview
 
 ## Rewards for Liquidity Providers
@@ -62,6 +79,23 @@ The maximum boost possible for liquidity mining incentives is 2.5x. For tooling,
 
 
 ---
+## Evaluation
+
+
+
+
+
+##### Which one of these is not a parameter while distributing the Liquidity Mining rewards to Liquidity Providers?  
+
+- [ ]  How much the pool they are providing liquidity to receives
+- [ ]  What share of the pool’s liquidity they have
+- [ ]  How much are they boosted by securing veBAL
+- [x]  How much BAL do they hold
+
+    
+
+
+---
 ## Gauge System
 
 ## Gauge System Overview
@@ -82,6 +116,34 @@ There are five gauge types:
 3. **Ethereum Mainnet Pools** - LM that is distributed to mainnet. This pool gets  56% of LM Rewards i.e. 81,200 BAL
 4. **Polygon Pools** - LM that is distributed to Polygon. This pool gets  17% of LM Rewards i.e. 24,650 BAL
 5. **Arbitrum Pools** - LM that is distributed to Arbitrum. This pool gets  7% of LM Rewards i.e. 10,150 BAL
+
+    
+
+
+---
+## Evaluation
+
+
+
+
+
+##### How much BAL are minted weekly as part of the inflation schedule?  
+
+- [ ]  145,00 BAL
+- [x]  145,000 BAL
+- [ ]  1450 BAL
+- [ ]  145,0000 BAL
+
+
+
+
+
+##### What percentage of BAL minted goes to veBAL gauge?  
+
+- [ ]  20%
+- [ ]  25%
+- [ ]  50%
+- [x]  10%
 
     
 

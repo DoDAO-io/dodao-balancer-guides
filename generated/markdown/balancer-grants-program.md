@@ -26,17 +26,6 @@ Governance points groups or individuals to provide services to the protocol, who
 
 
 
-##### Which of these is TRUE about Balancer?  
-
-- [x]  It is an automated portfolio manager
-- [x]  Fees are collected from traders to rebalance portfolios
-- [ ]  It has an orderbook for traders
-- [x]  It is a trading platform
-
-
-
-
-
 ##### What is the governance token for Balancer?  
 
 - [ ]  BAL
