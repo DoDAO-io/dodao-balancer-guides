@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T22:41:14.503Z'
+created: '2022-12-07T22:42:18.485Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -70,8 +70,16 @@ steps:
 
       </div>
 
+      <br/>
+
+      <br/>
+
       StableSwap approaches Constant Product as A->0 and Constant Sum as A->∞
 
+
+      <br/>
+
+      <br/>
 
 
       $$
@@ -83,6 +91,9 @@ steps:
 
       $$
 
+
+
+      <br/>
 
        Where:
        
