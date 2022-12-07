@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T17:35:55.125Z'
+created: '2022-12-07T17:38:46.567Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -66,19 +66,22 @@ steps:
       A->∞](https://github.com/balancer-labs/docs-v2/raw/fc4f11145504bf9bc2dbed3ac30b6ffbe704d0aa/.gitbook/assets/output%20(1).gif)
 
        ```
+
       $$
 
        A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
 
-      $$ 
+      $$
+
+
 
       ```
 
        Where:
        
        * ```$$n$$``` is the number of tokens 
-       * ```$$maths x_i$$``` is balance of token ```$$i$$``` 
-       * ```$$A$$``` is the amplification parameter 
+       * ```$$x_i$$ ``` is balance of token ``` $$i$$ ``` 
+       * ``` $$A$$``` is the amplification parameter 
 
       More detail about stable math can be found
       [here](https://docs.balancer.fi/concepts/math/stable-math)
