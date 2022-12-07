@@ -3,7 +3,7 @@
     "engineering"
   ],
   "content": "What are Composable Stable Pool and why do we need them?",
-  "created": "2022-12-07T22:33:29.906Z",
+  "created": "2022-12-07T22:41:14.503Z",
   "guideIntegrations": {
     "discordRoleIds": []
   },
@@ -32,7 +32,7 @@
       "uuid": "892b3f61-cfe8-4aab-89c1-ea5004425e4e"
     },
     {
-      "content": "One of the most elegant features of ComposableStablePool is that provides the ability to provide custom Rate Provider for each token\n\nConstructor of ComposableStablePool takes the following struct as params\n```solidity\n    struct NewPoolParams {\n        IVault vault;\n        IProtocolFeePercentagesProvider protocolFeeProvider;\n        string name;\n        string symbol;\n        IERC20[] tokens;\n        IRateProvider[] rateProviders;\n        uint256[] tokenRateCacheDurations;\n        bool[] exemptFromYieldProtocolFeeFlags;\n        uint256 amplificationParameter;\n        uint256 swapFeePercentage;\n        uint256 pauseWindowDuration;\n        uint256 bufferPeriodDuration;\n        address owner;\n    }\n```",
+      "content": "ComposableStablePool's most elegant feature is its ability to provide a custom Rate Provider for each token.\n\nConstructor of ComposableStablePool takes the following struct as params\n\n```solidity\n    struct NewPoolParams {\n        IVault vault;\n        IProtocolFeePercentagesProvider protocolFeeProvider;\n        string name;\n        string symbol;\n        IERC20[] tokens;\n        IRateProvider[] rateProviders;\n        uint256[] tokenRateCacheDurations;\n        bool[] exemptFromYieldProtocolFeeFlags;\n        uint256 amplificationParameter;\n        uint256 swapFeePercentage;\n        uint256 pauseWindowDuration;\n        uint256 bufferPeriodDuration;\n        address owner;\n    }\n```\nWe can pass a custom rate provider to the constructor for each token. The rate conversion logic is also handled very well when scaling the tokens. Here we can see the `ComposableStablePoolRates.sol` to see how rate provider is actually used.\n\n```solidity\n    /**\n     * @dev Overrides scaling factor getter to compute the tokens' rates.\n     */\n    function _scalingFactors() internal view virtual override returns (uint256[] memory) {\n        // There is no need to check the arrays length since both are based on `_getTotalTokens`\n        uint256 totalTokens = _getTotalTokens();\n        uint256[] memory scalingFactors = new uint256[](totalTokens);\n\n        for (uint256 i = 0; i < totalTokens; ++i) {\n            scalingFactors[i] = _getScalingFactor(i).mulDown(_getTokenRate(i));\n        }\n\n        return scalingFactors;\n    }\n```\n\nThe logic to ensure that tokens are properly scaled when calculating the swapped tokens is already part of BasePool. ComposableStablePool(`ComposableStablePoolRates.sol`) extends it and considers the rate provider also.",
       "name": "Rate Provides",
       "stepItems": [],
       "uuid": "23176d4a-3737-45b3-bd5d-735cb7c5338b"
