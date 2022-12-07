@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T22:30:04.849Z'
+created: '2022-12-07T22:33:01.389Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -121,15 +121,16 @@ steps:
   - content: >-
       # ComposableStablePool
 
-      ComposableStablePool is a type of Balancer Pool that extends from
-      BasePool. It uses the authenticate modifier to protect its functions with
-      advanced authorization mechanisms.
+      `ComposableStablePool` This is a 5-token stable pool that also contains
+      its own BPT. It also is a type of Balancer Pool that extends from
+      `BasePool`, that uses the authenticate modifier to protect its functions
+      with advanced authorization mechanisms.
 
 
       Some of the benefits that every pool gets when it inherits from BasePool
       are:
 
-      1. Emergency Pause - The BasePool inherits from the TemporarilyPausable
+      1. Emergency Pause - The BasePool inherits from the `TemporarilyPausable`
       contract, which provides an emergency pause feature within the first 30
       days of factory deployment.
 
@@ -144,10 +145,10 @@ steps:
 
       ## Pool Initialization
 
-      CmoposableStablePool uses the initialization step of Balancer Pools to
+      `ComposableStablePool` uses the initialization step of Balancer Pools to
       mint Balancer Pool Tokens(BPT) to the first account that joins them. By
       minting the entire BPT supply for the initial joiner and then pulling all
-      tokens except those due to the joiner, CmoposableStablePool arrives at the
+      tokens except those due to the joiner, ComposableStablePool arrives at the
       desired state of the Pool holding all BPT except the joiner's.
 
 
