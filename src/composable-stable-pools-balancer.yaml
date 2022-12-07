@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T22:22:33.225Z'
+created: '2022-12-07T22:30:04.849Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -168,5 +168,34 @@ steps:
     name: Composable Stable Pool
     stepItems: []
     uuid: 892b3f61-cfe8-4aab-89c1-ea5004425e4e
+  - content: >-
+      One of the most elegant features of ComposableStablePool is that provides
+      the ability to provide custom Rate Provider for each token
+
+
+      Constructor of ComposableStablePool takes the following struct as params
+
+      ```solidity
+
+          struct NewPoolParams {
+              IVault vault;
+              IProtocolFeePercentagesProvider protocolFeeProvider;
+              string name;
+              string symbol;
+              IERC20[] tokens;
+              IRateProvider[] rateProviders;
+              uint256[] tokenRateCacheDurations;
+              bool[] exemptFromYieldProtocolFeeFlags;
+              uint256 amplificationParameter;
+              uint256 swapFeePercentage;
+              uint256 pauseWindowDuration;
+              uint256 bufferPeriodDuration;
+              address owner;
+          }
+
+      ```
+    name: Rate Provides
+    stepItems: []
+    uuid: 23176d4a-3737-45b3-bd5d-735cb7c5338b
 thumbnail: https://d31h13bdjwgzxs.cloudfront.net/academy/balancer/balancers_fees.png
 uuid: composable-stable-pools-balancer
