@@ -66,17 +66,15 @@ steps:
       A->∞](https://github.com/balancer-labs/docs-v2/raw/fc4f11145504bf9bc2dbed3ac30b6ffbe704d0aa/.gitbook/assets/output%20(1).gif)
 
        ```maths 
-       $$
        A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
-       $$
+       ```
     
        Where:
        
-       * $$n$$ is the number of tokens
-       * $$x_i$$ is is balance of token $$i$$
-       * $$A$$ is the amplification parameter
+       * ```maths n ``` is the number of tokens 
+       * ```maths x_i ``` is balance of token ```maths i ``` 
+       * ```maths A ``` is the amplification parameter 
 
-       ```
       More detail about stable math can be found
       [here](https://docs.balancer.fi/concepts/math/stable-math)
 
