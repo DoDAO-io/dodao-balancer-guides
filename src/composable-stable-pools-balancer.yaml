@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T15:50:54.486Z'
+created: '2022-12-07T17:02:30.099Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -66,9 +66,14 @@ steps:
       A->∞](https://github.com/balancer-labs/docs-v2/raw/fc4f11145504bf9bc2dbed3ac30b6ffbe704d0aa/.gitbook/assets/output%20(1).gif)
 
        ```maths 
+      $$
+
        A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
-       ```
-    
+
+      $$ 
+
+      ```
+
        Where:
        
        * ```maths n ``` is the number of tokens 
@@ -104,4 +109,4 @@ steps:
     stepItems: []
     uuid: 0943077a-74a0-4317-a3db-fbbb0c2350ce
 thumbnail: https://d31h13bdjwgzxs.cloudfront.net/academy/balancer/balancers_fees.png
-uuid: 813f4003-597f-4329-b8e3-e58384638861
+uuid: composable-stable-pools-balancer
