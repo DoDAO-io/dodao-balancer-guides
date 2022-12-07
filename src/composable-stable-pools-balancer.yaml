@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T17:33:45.672Z'
+created: '2022-12-07T17:35:55.125Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -76,9 +76,9 @@ steps:
 
        Where:
        
-       * `$$n$$` is the number of tokens 
-       * `$$maths x_i$$ ` is balance of token `$$i$$` 
-       * `$$A$$` is the amplification parameter 
+       * ```$$n$$``` is the number of tokens 
+       * ```$$maths x_i$$``` is balance of token ```$$i$$``` 
+       * ```$$A$$``` is the amplification parameter 
 
       More detail about stable math can be found
       [here](https://docs.balancer.fi/concepts/math/stable-math)
