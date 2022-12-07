@@ -67,22 +67,13 @@ steps:
 
 
       $$
-
-      A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + {
-      \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
-
+      A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
       $$
 
-
       Where:
-
-
       * $$n$$ is the number of tokens
-
       * $$x_i$$ is is balance of token $$i$$
-
       * $$A$$ is the amplification parameter
-
 
       More detail about stable math can be found
       [here](https://docs.balancer.fi/concepts/math/stable-math)
