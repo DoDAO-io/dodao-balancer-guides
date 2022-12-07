@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T22:42:18.485Z'
+created: '2022-12-07T22:47:45.737Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -129,6 +129,24 @@ steps:
     name: Stable Math
     stepItems: []
     uuid: 0943077a-74a0-4317-a3db-fbbb0c2350ce
+  - content: ''
+    name: Evaluation
+    stepItems:
+      - answerKeys:
+          - 0c66f840
+        choices:
+          - content: Constant Product
+            key: 075e30b2
+          - content: Constant Sum
+            key: 0c66f840
+          - content: Constant Mean
+            key: 5213dee4
+          - content: Constant Mode
+            key: ed20e9c4
+        content: When A->∞ what type of invariant does the pool uses?
+        type: SingleChoice
+        uuid: 0dff0f3b-da4e-4b55-b835-037dac8326d1
+    uuid: 2bb8e124-e44b-43dc-a1c6-eb42688a1a27
   - content: >-
       # ComposableStablePool
 
