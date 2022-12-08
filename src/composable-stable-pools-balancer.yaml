@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-07T22:56:26.300Z'
+created: '2022-12-08T08:44:05.139Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -339,5 +339,95 @@ steps:
         type: SingleChoice
         uuid: 11fcf92c-8261-461e-95cc-f81d41fd5d25
     uuid: 2aeb9912-445e-4b4c-b4e4-b74f1ce214c1
+  - content: >-
+      You can easily extend Balancer's Composable Stable Pools by installing the
+      package containing `ComposableStablePool.sol`.
+
+
+      ```
+
+      npm i @balancer-labs/v2-pool-stable
+
+      ``` 
+
+
+      Here are the first few lines of `ComposableStablePool.sol` and it explains
+      how the code is structured.
+
+      ```
+
+      /**
+       * @dev StablePool with preminted BPT and rate providers for each token, allowing for e.g. wrapped tokens with a known
+       * price ratio, such as Compound's cTokens.
+       *
+       * BPT is preminted on Pool initialization and registered as one of the Pool's tokens, allowing for swaps to behave as
+       * single-token joins or exits (by swapping a token for BPT). We also support regular joins and exits, which can mint
+       * and burn BPT.
+       *
+       * Preminted BPT is deposited in the Vault as the initial balance of the Pool, and doesn't belong to any entity until
+       * transferred out of the Pool. The Pool's arithmetic behaves as if it didn't exist, and the BPT total supply is not
+       * a useful value: we rely on the 'virtual supply' (how much BPT is actually owned outside the Vault) instead.
+       */
+      contract ComposableStablePool is
+          IRateProvider,
+          BaseGeneralPool,
+          StablePoolAmplification,
+          ComposableStablePoolRates,
+          ComposableStablePoolProtocolFees
+      {
+          using FixedPoint for uint256;
+          using PriceRateCache for bytes32;
+          using StablePoolUserData for bytes;
+          using BasePoolUserData for bytes;
+
+          // The maximum imposed by the Vault, which stores balances in a packed format, is 2**(112) - 1.
+          // We are preminting half of that value (rounded up).
+          uint256 private constant _PREMINTED_TOKEN_BALANCE = 2**(111);
+
+          // The constructor arguments are received in a struct to work around stack-too-deep issues
+          struct NewPoolParams {
+              IVault vault;
+              IProtocolFeePercentagesProvider protocolFeeProvider;
+              string name;
+              string symbol;
+              IERC20[] tokens;
+              IRateProvider[] rateProviders;
+              uint256[] tokenRateCacheDurations;
+              bool[] exemptFromYieldProtocolFeeFlags;
+              uint256 amplificationParameter;
+              uint256 swapFeePercentage;
+              uint256 pauseWindowDuration;
+              uint256 bufferPeriodDuration;
+              address owner;
+          }
+
+          constructor(NewPoolParams memory params)
+              BasePool(
+                  params.vault,
+                  IVault.PoolSpecialization.GENERAL,
+                  params.name,
+                  params.symbol,
+                  _insertSorted(params.tokens, IERC20(this)),
+                  new address[](params.tokens.length + 1),
+                  params.swapFeePercentage,
+                  params.pauseWindowDuration,
+                  params.bufferPeriodDuration,
+                  params.owner
+              )
+              StablePoolAmplification(params.amplificationParameter)
+              ComposableStablePoolStorage(_extractStorageParams(params))
+              ComposableStablePoolRates(_extractRatesParams(params))
+              ProtocolFeeCache(
+                  params.protocolFeeProvider,
+                  ProviderFeeIDs({ swap: ProtocolFeeType.SWAP, yield: ProtocolFeeType.YIELD, aum: ProtocolFeeType.AUM })
+              )
+          {
+              // solhint-disable-previous-line no-empty-blocks
+          }
+
+      ``` 
+    name: Extend  Composable Stable Pools
+    stepItems: []
+    uuid: 6f649721-5e7e-4137-b4c7-c997fee374fc
 thumbnail: https://d31h13bdjwgzxs.cloudfront.net/academy/balancer/balancers_fees.png
 uuid: composable-stable-pools-balancer
