@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-08T08:44:32.161Z'
+created: '2022-12-08T09:09:26.486Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -426,6 +426,25 @@ steps:
           }
 
       ``` 
+
+
+      As you can see, the functionality of stable pools is divided into smaller
+      contracts, each performing a single responsibility. This division of code
+      helps to ensure that the code is easy to understand and extend.
+      ComposableStablePool extends from 
+
+      1. `BaseGeneralPool` - provides some generic functionality related to
+      security, swapping, vault integration etc. 
+
+      2. `StablePoolAmplification` - responsible for updating of Amplification
+      Parameter with time
+
+      3. `ComposableStablePoolRates` - builds a cache of the rate provides and
+      then using these rates to calculate the number of output or input tokens
+      for swap.
+
+      4. `ComposableStablePoolProtocolFees` - calculates the protocol fees
+      during joins and exits
     name: Extend  Composable Stable Pools
     stepItems: []
     uuid: 6f649721-5e7e-4137-b4c7-c997fee374fc
