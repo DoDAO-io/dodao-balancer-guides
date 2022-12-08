@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-08T09:11:15.742Z'
+created: '2022-12-08T11:22:42.962Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -356,18 +356,6 @@ steps:
 
       ```solidity
 
-      /**
-       * @dev StablePool with preminted BPT and rate providers for each token, allowing for e.g. wrapped tokens with a known
-       * price ratio, such as Compound's cTokens.
-       *
-       * BPT is preminted on Pool initialization and registered as one of the Pool's tokens, allowing for swaps to behave as
-       * single-token joins or exits (by swapping a token for BPT). We also support regular joins and exits, which can mint
-       * and burn BPT.
-       *
-       * Preminted BPT is deposited in the Vault as the initial balance of the Pool, and doesn't belong to any entity until
-       * transferred out of the Pool. The Pool's arithmetic behaves as if it didn't exist, and the BPT total supply is not
-       * a useful value: we rely on the 'virtual supply' (how much BPT is actually owned outside the Vault) instead.
-       */
       contract ComposableStablePool is
           IRateProvider,
           BaseGeneralPool,
