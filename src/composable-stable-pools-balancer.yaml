@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-08T08:44:05.139Z'
+created: '2022-12-08T08:44:32.161Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -344,7 +344,7 @@ steps:
       package containing `ComposableStablePool.sol`.
 
 
-      ```
+      ```shell
 
       npm i @balancer-labs/v2-pool-stable
 
@@ -354,7 +354,7 @@ steps:
       Here are the first few lines of `ComposableStablePool.sol` and it explains
       how the code is structured.
 
-      ```
+      ```solidity
 
       /**
        * @dev StablePool with preminted BPT and rate providers for each token, allowing for e.g. wrapped tokens with a known
