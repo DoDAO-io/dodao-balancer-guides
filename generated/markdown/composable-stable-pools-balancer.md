@@ -75,6 +75,13 @@ The higher the A-Factor is set, the more flattened the curve becomes.
 
 We can pass `amplificationParameter` to the constructor when creating instance of ComposableStablePool.
 
+ComposableStablePool(`StablePoolAmplification.sol`) uses timestamps to slowly update its Amplification parameter over time. These changes must occur over a minimum time period much larger than the blocktime, making timestamp manipulation a non-issue. Amplification factor changes must happen over a minimum period of one day, and can at most divide or multiply the current value by 2 every day.
+
+You can call the `_getAmplificationParameter` which also returns a boolean to indicate whether there is an ongoing update
+
+```solidity
+function _getAmplificationParameter() internal view returns (uint256 value, bool isUpdating)
+```
 
     
 
@@ -160,6 +167,8 @@ The preminted BPT is deposited into the Vault as the initial balance of the Pool
 ---
 ## Rate Provides
 
+
+## RateProvider
 ComposableStablePool's most elegant feature is its ability to provide a custom Rate Provider for each token.
 
 Constructor of ComposableStablePool takes the following struct as params
@@ -201,6 +210,12 @@ We can pass a custom rate provider to the constructor for each token. The rate c
 ```
 
 The logic to ensure that tokens are properly scaled when calculating the swapped tokens is already part of BasePool. ComposableStablePool(`ComposableStablePoolRates.sol`) extends it and considers the rate provider also.
+
+## Caching
+ Token rate caches are used to avoid querying the price rate for a token every time we need to work with it. The `old rate` field is used for precise protocol fee calculation, to ensure that token yield is only "taxed" once. 
+
+Constructor of ComposableStablePool also accepts `uint256[] tokenRateCacheDurations;` which determines the duration for which the rates should be cached.
+
 
     
 
