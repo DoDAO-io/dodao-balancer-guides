@@ -563,13 +563,13 @@ steps:
 
 
       ```solidity
-          function _getAuthorizer() internal view override returns (IAuthorizer) {
-              // Access control management is delegated to the Vault's Authorizer. This lets Balancer Governance manage which
-              // accounts can call permissioned functions: for example, to perform emergency pauses.
-              // If the owner is delegated, then *all* permissioned functions, including `setSwapFeePercentage`, will be under
-              // Governance control.
-              return getVault().getAuthorizer();
-          }
+      function _getAuthorizer() internal view override returns (IAuthorizer) {
+          // Access control management is delegated to the Vault's Authorizer. This lets Balancer Governance manage which
+          // accounts can call permissioned functions: for example, to perform emergency pauses.
+          // If the owner is delegated, then *all* permissioned functions, including `setSwapFeePercentage`, will be under
+          // Governance control.
+          return getVault().getAuthorizer();
+      }
       ```
 
 
@@ -604,13 +604,13 @@ steps:
 
       ```solidity
 
-          /**
-           * @dev Reverts unless the caller is allowed to call this function. Should only be applied to external functions.
-           */
-          modifier authenticate() {
-              _authenticateCaller();
-              _;
-          }
+      /**
+       * @dev Reverts unless the caller is allowed to call this function. Should only be applied to external functions.
+       */
+      modifier authenticate() {
+          _authenticateCaller();
+          _;
+      }
 
       ```
     name: Permissions

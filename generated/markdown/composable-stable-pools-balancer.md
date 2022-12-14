@@ -357,7 +357,10 @@ const poolAddress = events[0].args.pool;
 const pool = await ethers.getContractAt('ComposableStablePool', poolAddress);
 const poolId = await pool.getPoolId();
 ```
-## 2. Using [BalPy](https://pypi.org/project/balpy/) Steps 1. Make a virtual environment
+## 2. Using [BalPy](https://pypi.org/project/balpy/) 
+Steps 
+
+1. Make a virtual environment
    ```shell
     python3 -m venv ./venv
     source ./venv/bin/activate
@@ -374,6 +377,66 @@ const poolId = await pool.getPoolId();
   ```shell
     python3 poolCreationSample.py mySampleComposableStablePool.json
   ```
+
+
+    
+
+
+---
+## Evaluation
+
+
+
+
+
+##### Select two convenient ways which Balancer provides for deploying Balancer Pools  
+
+- [x]  Using PoolFactory(Typescript/Javascript)
+- [ ]  Using balancer's clojure library
+- [x]  Using BalPy
+- [ ]  Using Kubernetes
+
+    
+
+
+---
+## Permissions
+
+Access Control Management in ComposableStablePool works in the exact same way as other pools. `ComposableStablePool` extends from `BasePool` which further extends from `BasePoolAuthorization`. 
+
+`BasePool` delegates Access Control Management to Vault's Authorizer. This can be seen from the below code
+
+```solidity function _getAuthorizer() internal view override returns (IAuthorizer) {
+    // Access control management is delegated to the Vault's Authorizer. This lets Balancer Governance manage which
+    // accounts can call permissioned functions: for example, to perform emergency pauses.
+    // If the owner is delegated, then *all* permissioned functions, including `setSwapFeePercentage`, will be under
+    // Governance control.
+    return getVault().getAuthorizer();
+} ```
+
+Most of the methods that modify ComposableStablePool's behaviour are protected using the same authentication mechanism as used in other pool. Below are some of the signatures of ComposableStablePool related functions that modify the behaviour and are protected using the `authenticate` modifier.
+
+```solidity
+// ComposableStablePoolRates.sol
+function setTokenRateCacheDuration(IERC20 token, uint256 duration) external authenticate
+
+// StablePoolAmplification.sol
+function startAmplificationParameterUpdate(uint256 rawEndValue, uint256 endTime) external authenticate
+
+function stopAmplificationParameterUpdate() external authenticate
+```
+
+`authenticate` modifier is declared in `Authentication.sol`
+
+```solidity
+/**
+ * @dev Reverts unless the caller is allowed to call this function. Should only be applied to external functions.
+ */
+modifier authenticate() {
+    _authenticateCaller();
+    _;
+}
+```
 
 
     
