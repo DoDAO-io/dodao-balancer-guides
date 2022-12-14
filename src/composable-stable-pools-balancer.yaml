@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-14T20:37:51.220Z'
+created: '2022-12-14T21:32:18.475Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -436,11 +436,12 @@ steps:
     name: Extend  Composable Stable Pools
     stepItems: []
     uuid: 6f649721-5e7e-4137-b4c7-c997fee374fc
-  - content: >+
-      There are a few ways to deploy pools. Balancer provides two very easy ways to deploy new pools.
-      
+  - content: >
+      There are a few ways to deploy pools. Balancer provides two very easy ways
+      to deploy new pools.
+
       ### 1. Using Factory (Typescript/Javascript)
-      
+
       Like other pools, ComposableStablePool has a factory from which users can
       deploy new pools. To deploy a pool, you must call that factory's create()
       function with the following arguments 
@@ -461,8 +462,9 @@ steps:
 
       ```
 
-      Using hardhat's ethers library you can easily create the pool by passing all the required
-      parameters to the ComposableStablePoolFactory's create function   
+      Using hardhat's ethers library you can easily create the pool by passing
+      all the required parameters to the ComposableStablePoolFactory's create
+      function   
 
       ```javascript
 
@@ -480,7 +482,7 @@ steps:
             amplificationParameter, rateProviders, tokenRateCacheDurations, exemptFromYieldProtocolFeeFlags,
             swapFeePercentage, owner
       );
-      
+
       const receipt = await tx.wait();
 
 
@@ -493,14 +495,18 @@ steps:
 
       // We're going to need the PoolId later, so ask the contract for it
 
-      const pool = await ethers.getContractAt('ComposableStablePool', poolAddress);
+      const pool = await ethers.getContractAt('ComposableStablePool',
+      poolAddress);
 
       const poolId = await pool.getPoolId();
 
       ```
-      
-      ## 2. Using [BalPy](https://pypi.org/project/balpy/)
-      Steps
+
+      ## 2. Using [BalPy](https://pypi.org/project/balpy/) 
+
+      Steps 
+
+
       1. Make a virtual environment
          ```shell
           python3 -m venv ./venv
@@ -511,11 +517,14 @@ steps:
           python3 -m pip install balpy
         ```
       3. Source your environment (balpy will warn you if you forget this step)
-      4. Copy a pool config for the poolType you want to create. You can find sample file for ComposableStablePool [here](https://github.com/balancer-labs/balpy/blob/main/samples/poolCreation/sampleComposableStablePool.json)
+      4. Copy a pool config for the poolType you want to create. You can find
+      sample file for ComposableStablePool
+      [here](https://github.com/balancer-labs/balpy/blob/main/samples/poolCreation/sampleComposableStablePool.json)
         ```shell
           cp sampleComposableStablePool.json mySampleComposableStablePool.json
         ```
-      5. Edit your new pool file in your favorite text editor and run the Python script
+      5. Edit your new pool file in your favorite text editor and run the Python
+      script
         ```shell
           python3 poolCreationSample.py mySampleComposableStablePool.json
         ```
