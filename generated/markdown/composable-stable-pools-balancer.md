@@ -37,17 +37,30 @@ can end the pool having just single type of tokens.
 Stable Math's Invariant solves both of these problems and can keep prices more equal as long as the liquidity pool is 
 not extremely unbalanced
 
-![StableSwap approaches Constant Product as A->0 and Constant Sum as A->∞](https://github.com/balancer-labs/docs-v2/raw/fc4f11145504bf9bc2dbed3ac30b6ffbe704d0aa/.gitbook/assets/output%20(1).gif)
+<div align="center">
+<img width="560" height="315" src="https://github.com/balancer-labs/docs-v2/raw/fc4f11145504bf9bc2dbed3ac30b6ffbe704d0aa/.gitbook/assets/output%20(1).gif" />
+</div>
+<br/>
+<br/>
+StableSwap approaches Constant Product as A->0 and Constant Sum as A->∞
 
- ```maths 
- A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
- ```
+<br/>
+<br/>
+
+$$
+
+A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
+
+$$
+
+
+<br/>
 
  Where:
  
- * ```maths n ``` is the number of tokens 
- * ```maths x_i ``` is balance of token ```maths i ``` 
- * ```maths A ``` is the amplification parameter 
+ * $n$ is the number of tokens 
+ * $x_i$  is balance of token  $$i$$ 
+ * $$A$$ is the amplification parameter 
 
 More detail about stable math can be found [here](https://docs.balancer.fi/concepts/math/stable-math)
 
@@ -61,6 +74,287 @@ illustration below shows the stable swap invariant with the A-Factor set to zero
 The higher the A-Factor is set, the more flattened the curve becomes.
 
 We can pass `amplificationParameter` to the constructor when creating instance of ComposableStablePool.
+
+
+    
+
+
+---
+## Evaluation
+
+
+
+
+
+##### When Amplification Parameter approaches infinity (A->∞) what type of invariant does the pool uses?  
+
+- [ ]  Constant Product
+- [x]  Constant Sum
+- [ ]  Constant Mean
+- [ ]  Constant Mode
+
+
+
+
+
+##### When Amplification Parameter approaches zero (A-> 0) what type of invariant does the pool uses?  
+
+- [x]  Constant Product
+- [ ]  Constant Sum
+- [ ]  Constant Mean
+- [ ]  Constant Mode
+
+    
+
+
+---
+## Composable Stable Pool
+
+# ComposableStablePool
+`ComposableStablePool` This is a 5-token stable pool that also contains its own BPT. It also is a type of Balancer Pool that extends from `BasePool`, that uses the authenticate modifier to protect its functions with advanced authorization mechanisms.
+
+Some of the benefits that every pool gets when it inherits from BasePool are:
+1. Emergency Pause - The BasePool inherits from the `TemporarilyPausable` contract, which provides an emergency pause feature within the first 30 days of factory deployment.
+2. Swap Fee management - A simple but important feature is management of the swap fee percentage.
+3. Vault Integration - The Vault is the central point for all pool tokens and related bookkeeping. It is the primary point of interaction for joining, exiting, or swapping pools, and delegates to the appropriate pools as needed.
+
+## Pool Initialization
+`ComposableStablePool` uses the initialization step of Balancer Pools to mint Balancer Pool Tokens(BPT) to the first account that joins them. By minting the entire BPT supply for the initial joiner and then pulling all tokens except those due to the joiner, ComposableStablePool arrives at the desired state of the Pool holding all BPT except the joiner's.
+
+## Balancer Pool Token (BPT)
+BPT is preminted and registered as one of the tokens in the pool during initialization. This allows for token swaps to be made that look like either a single-token join or exit. ComposableStablePool also support regular joins and exits, which can create or destroy BPT.
+
+The preminted BPT is deposited into the Vault as the initial balance of the Pool. Until it is transferred out of the Pool, it does not belong to any entity. The Pool's arithmetic acts as if BPT doesn't exist. Therefore, the total supply of BPT is not a useful value. ComposableStablePool relies on the 'virtual supply' (how much BPT is actually owned outside the Vault) instead.
+
+    
+
+
+---
+## Evaluation
+
+
+
+
+
+##### What is the max number of tokens that we use in ComposableStablePool?  
+
+- [ ]  2
+- [ ]  3
+- [ ]  4
+- [x]  5
+
+
+
+
+
+##### When using ComposableStablePool, the BPT that is minted is part of which pool  
+
+- [x]  Same ComposableStablePool
+- [ ]  New and separate ComposableStablePool
+- [ ]  Liquidity Bootstrapping Pool
+- [ ]  Boosted Pool
+
+    
+
+
+---
+## Rate Provides
+
+ComposableStablePool's most elegant feature is its ability to provide a custom Rate Provider for each token.
+
+Constructor of ComposableStablePool takes the following struct as params
+
+```solidity
+    struct NewPoolParams {
+        IVault vault;
+        IProtocolFeePercentagesProvider protocolFeeProvider;
+        string name;
+        string symbol;
+        IERC20[] tokens;
+        IRateProvider[] rateProviders;
+        uint256[] tokenRateCacheDurations;
+        bool[] exemptFromYieldProtocolFeeFlags;
+        uint256 amplificationParameter;
+        uint256 swapFeePercentage;
+        uint256 pauseWindowDuration;
+        uint256 bufferPeriodDuration;
+        address owner;
+    }
+```
+We can pass a custom rate provider to the constructor for each token. The rate conversion logic is also handled very well when scaling the tokens. Here we can see the `ComposableStablePoolRates.sol` to see how rate provider is actually used.
+
+```solidity
+    /**
+     * @dev Overrides scaling factor getter to compute the tokens' rates.
+     */
+    function _scalingFactors() internal view virtual override returns (uint256[] memory) {
+        // There is no need to check the arrays length since both are based on `_getTotalTokens`
+        uint256 totalTokens = _getTotalTokens();
+        uint256[] memory scalingFactors = new uint256[](totalTokens);
+
+        for (uint256 i = 0; i < totalTokens; ++i) {
+            scalingFactors[i] = _getScalingFactor(i).mulDown(_getTokenRate(i));
+        }
+
+        return scalingFactors;
+    }
+```
+
+The logic to ensure that tokens are properly scaled when calculating the swapped tokens is already part of BasePool. ComposableStablePool(`ComposableStablePoolRates.sol`) extends it and considers the rate provider also.
+
+    
+
+
+---
+## Evaluation
+
+
+
+
+
+##### What is the role of Rate Providers?  
+
+- [ ]  The determine by how much decimals do we need to scale the tokens
+- [x]  The determine and apply the token rate when swapping
+- [ ]  To normalize all the token prices to same value
+- [ ]  To enhance the security of the pool
+
+
+
+
+
+##### How many rate providers can we pass to ComposableStablePool?  
+
+- [ ]  Two rate providers are allowed per pool
+- [ ]  There is no limit
+- [ ]  Only one rate provider is allowed per pool
+- [x]  Same as the number of tokens used in the pool
+
+    
+
+
+---
+## Extend  Composable Stable Pools
+
+You can easily extend Balancer's Composable Stable Pool by installing the package containing `ComposableStablePool.sol`.
+
+```shell
+npm i @balancer-labs/v2-pool-stable
+``` 
+
+Here are the first few lines of `ComposableStablePool.sol` and it explains how the code is structured.
+```solidity
+contract ComposableStablePool is
+    IRateProvider,
+    BaseGeneralPool,
+    StablePoolAmplification,
+    ComposableStablePoolRates,
+    ComposableStablePoolProtocolFees
+{
+    using FixedPoint for uint256;
+    using PriceRateCache for bytes32;
+    using StablePoolUserData for bytes;
+    using BasePoolUserData for bytes;
+
+    // The maximum imposed by the Vault, which stores balances in a packed format, is 2**(112) - 1.
+    // We are preminting half of that value (rounded up).
+    uint256 private constant _PREMINTED_TOKEN_BALANCE = 2**(111);
+
+    // The constructor arguments are received in a struct to work around stack-too-deep issues
+    struct NewPoolParams {
+        IVault vault;
+        IProtocolFeePercentagesProvider protocolFeeProvider;
+        string name;
+        string symbol;
+        IERC20[] tokens;
+        IRateProvider[] rateProviders;
+        uint256[] tokenRateCacheDurations;
+        bool[] exemptFromYieldProtocolFeeFlags;
+        uint256 amplificationParameter;
+        uint256 swapFeePercentage;
+        uint256 pauseWindowDuration;
+        uint256 bufferPeriodDuration;
+        address owner;
+    }
+
+    constructor(NewPoolParams memory params)
+        BasePool(
+            params.vault,
+            IVault.PoolSpecialization.GENERAL,
+            params.name,
+            params.symbol,
+            _insertSorted(params.tokens, IERC20(this)),
+            new address[](params.tokens.length + 1),
+            params.swapFeePercentage,
+            params.pauseWindowDuration,
+            params.bufferPeriodDuration,
+            params.owner
+        )
+        StablePoolAmplification(params.amplificationParameter)
+        ComposableStablePoolStorage(_extractStorageParams(params))
+        ComposableStablePoolRates(_extractRatesParams(params))
+        ProtocolFeeCache(
+            params.protocolFeeProvider,
+            ProviderFeeIDs({ swap: ProtocolFeeType.SWAP, yield: ProtocolFeeType.YIELD, aum: ProtocolFeeType.AUM })
+        )
+    {
+        // solhint-disable-previous-line no-empty-blocks
+    }
+
+``` 
+
+As you can see, the functionality of stable pools is divided into smaller contracts, each performing a single responsibility. This division of code helps to ensure that the code is easy to understand and extend. ComposableStablePool extends from 
+1. `BaseGeneralPool` - provides some generic functionality related to security, swapping, vault integration etc. 
+2. `StablePoolAmplification` - responsible for updating of Amplification Parameter with time
+3. `ComposableStablePoolRates` - builds a cache of the rate provides and then using these rates to calculate the number of output or input tokens for swap.
+4. `ComposableStablePoolProtocolFees` - calculates the protocol fees during joins and exits
+
+    
+
+
+---
+## Create and Deploy
+
+Like other pools, ComposableStablePool has a factory from which users can deploy new pools. To deploy a pool, you must call that factory's create() function with the following arguments 
+```javascript
+  create(
+    name: PromiseOrValue<string>,
+    symbol: PromiseOrValue<string>,
+    tokens: PromiseOrValue<string>[],
+    amplificationParameter: PromiseOrValue<BigNumberish>,
+    rateProviders: PromiseOrValue<string>[],
+    tokenRateCacheDurations: PromiseOrValue<BigNumberish>[],
+    exemptFromYieldProtocolFeeFlags: PromiseOrValue<boolean>[],
+    swapFeePercentage: PromiseOrValue<BigNumberish>,
+    owner: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+```
+
+
+```javascript
+const ComposableStablePoolFactoryAddress = '0x.......';
+const factory = await ethers.getContractAt(
+          'ComposableStablePoolFactory',
+          ComposableStablePoolFactoryAddress
+      );
+
+// function for your corresponding pool in that pool factory's ABI const tx = await factory.create(
+      NAME, SYMBOL, tokens, 
+      amplificationParameter, rateProviders, tokenRateCacheDurations, exemptFromYieldProtocolFeeFlags,
+      swapFeePercentage, owner
+);
+const receipt = await tx.wait();
+
+// We need to get the new pool address out of the PoolCreated event
+const events = receipt.events.filter((e) => e.event === 'PoolCreated');
+const poolAddress = events[0].args.pool;
+
+// We're going to need the PoolId later, so ask the contract for it
+const pool = await ethers.getContractAt('ComposableStablePool', poolAddress);
+const poolId = await pool.getPoolId();
+```
 
 
     

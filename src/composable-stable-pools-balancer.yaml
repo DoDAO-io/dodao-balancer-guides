@@ -461,17 +461,20 @@ steps:
 
       ```javascript
 
-      const COMPOSABLE_STABLE_POOL_FACTORY_ASSDRESS = '0x.......';
+      const ComposableStablePoolFactoryAddress = '0x.......';
 
-      const factory = await ethers.getContractAt('ComposableStablePoolFactory',
-                                                 COMPOSABLE_STABLE_POOL_FACTORY);
+      const factory = await ethers.getContractAt(
+                'ComposableStablePoolFactory',
+                ComposableStablePoolFactoryAddress
+            );
 
       // function for your corresponding pool in that pool factory's ABI
-
       const tx = await factory.create(
-
-      NAME, SYMBOL, tokens, amplificationParameter, weights,
-                                      swapFeePercentage, ZERO_ADDRESS);
+            NAME, SYMBOL, tokens, 
+            amplificationParameter, rateProviders, tokenRateCacheDurations, exemptFromYieldProtocolFeeFlags,
+            swapFeePercentage, owner
+      );
+      
       const receipt = await tx.wait();
 
 
@@ -484,12 +487,11 @@ steps:
 
       // We're going to need the PoolId later, so ask the contract for it
 
-      const pool = await ethers.getContractAt('WeightedPool', poolAddress);
+      const pool = await ethers.getContractAt('ComposableStablePool', poolAddress);
 
       const poolId = await pool.getPoolId();
 
       ```
-
     name: Create and Deploy
     stepItems: []
     uuid: 00b73e0b-0a58-42c5-af36-6a0973367128
