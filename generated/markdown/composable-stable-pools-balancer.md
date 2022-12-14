@@ -315,6 +315,8 @@ As you can see, the functionality of stable pools is divided into smaller contra
 ---
 ## Create and Deploy
 
+There are a few ways to deploy pools. Balancer provides two very easy ways to deploy new pools.
+### 1. Using Factory (Typescript/Javascript)
 Like other pools, ComposableStablePool has a factory from which users can deploy new pools. To deploy a pool, you must call that factory's create() function with the following arguments 
 ```javascript
   create(
@@ -331,8 +333,7 @@ Like other pools, ComposableStablePool has a factory from which users can deploy
   ): Promise<ContractTransaction>;
 
 ```
-
-
+Using hardhat's ethers library you can easily create the pool by passing all the required parameters to the ComposableStablePoolFactory's create function   
 ```javascript
 const ComposableStablePoolFactoryAddress = '0x.......';
 const factory = await ethers.getContractAt(
@@ -340,7 +341,8 @@ const factory = await ethers.getContractAt(
           ComposableStablePoolFactoryAddress
       );
 
-// function for your corresponding pool in that pool factory's ABI const tx = await factory.create(
+// function for your corresponding pool in that pool factory's ABI
+const tx = await factory.create(
       NAME, SYMBOL, tokens, 
       amplificationParameter, rateProviders, tokenRateCacheDurations, exemptFromYieldProtocolFeeFlags,
       swapFeePercentage, owner
@@ -355,6 +357,23 @@ const poolAddress = events[0].args.pool;
 const pool = await ethers.getContractAt('ComposableStablePool', poolAddress);
 const poolId = await pool.getPoolId();
 ```
+## 2. Using [BalPy](https://pypi.org/project/balpy/) Steps 1. Make a virtual environment
+   ```shell
+    python3 -m venv ./venv
+    source ./venv/bin/activate
+   ```
+2. Install balpy
+  ```shell
+    python3 -m pip install balpy
+  ```
+3. Source your environment (balpy will warn you if you forget this step) 4. Copy a pool config for the poolType you want to create. You can find sample file for ComposableStablePool [here](https://github.com/balancer-labs/balpy/blob/main/samples/poolCreation/sampleComposableStablePool.json)
+  ```shell
+    cp sampleComposableStablePool.json mySampleComposableStablePool.json
+  ```
+5. Edit your new pool file in your favorite text editor and run the Python script
+  ```shell
+    python3 poolCreationSample.py mySampleComposableStablePool.json
+  ```
 
 
     

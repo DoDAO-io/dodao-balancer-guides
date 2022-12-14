@@ -437,6 +437,10 @@ steps:
     stepItems: []
     uuid: 6f649721-5e7e-4137-b4c7-c997fee374fc
   - content: >+
+      There are a few ways to deploy pools. Balancer provides two very easy ways to deploy new pools.
+      
+      ### 1. Using Factory (Typescript/Javascript)
+      
       Like other pools, ComposableStablePool has a factory from which users can
       deploy new pools. To deploy a pool, you must call that factory's create()
       function with the following arguments 
@@ -457,7 +461,8 @@ steps:
 
       ```
 
-
+      Using hardhat's ethers library you can easily create the pool by passing all the required
+      parameters to the ComposableStablePoolFactory's create function   
 
       ```javascript
 
@@ -469,6 +474,7 @@ steps:
             );
 
       // function for your corresponding pool in that pool factory's ABI
+
       const tx = await factory.create(
             NAME, SYMBOL, tokens, 
             amplificationParameter, rateProviders, tokenRateCacheDurations, exemptFromYieldProtocolFeeFlags,
@@ -492,6 +498,27 @@ steps:
       const poolId = await pool.getPoolId();
 
       ```
+      
+      ## 2. Using [BalPy](https://pypi.org/project/balpy/)
+      Steps
+      1. Make a virtual environment
+         ```shell
+          python3 -m venv ./venv
+          source ./venv/bin/activate
+         ```
+      2. Install balpy
+        ```shell
+          python3 -m pip install balpy
+        ```
+      3. Source your environment (balpy will warn you if you forget this step)
+      4. Copy a pool config for the poolType you want to create. You can find sample file for ComposableStablePool [here](https://github.com/balancer-labs/balpy/blob/main/samples/poolCreation/sampleComposableStablePool.json)
+        ```shell
+          cp sampleComposableStablePool.json mySampleComposableStablePool.json
+        ```
+      5. Edit your new pool file in your favorite text editor and run the Python script
+        ```shell
+          python3 poolCreationSample.py mySampleComposableStablePool.json
+        ```
     name: Create and Deploy
     stepItems: []
     uuid: 00b73e0b-0a58-42c5-af36-6a0973367128
