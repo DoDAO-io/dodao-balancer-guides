@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-14T22:51:16.184Z'
+created: '2022-12-14T22:56:17.019Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -270,7 +270,10 @@ steps:
         type: SingleChoice
         uuid: 6cb0e2c3-d31e-44cf-8a16-f2e3749e4524
     uuid: 23529d6f-2fe1-4469-b315-70fe76d7bae4
-  - content: >-
+  - content: >
+
+      ## RateProvider
+
       ComposableStablePool's most elegant feature is its ability to provide a
       custom Rate Provider for each token.
 
@@ -324,6 +327,14 @@ steps:
       swapped tokens is already part of BasePool.
       ComposableStablePool(`ComposableStablePoolRates.sol`) extends it and
       considers the rate provider also.
+
+
+      ## Caching
+       Token rate caches are used to avoid querying the price rate for a token every time we need to work with it. The `old rate` field is used for precise protocol fee calculation, to ensure that token yield is only "taxed" once. 
+
+      Constructor of ComposableStablePool also accepts `uint256[]
+      tokenRateCacheDurations;` which determines the duration for which the
+      rates should be cached.
     name: Rate Provides
     stepItems: []
     uuid: 23176d4a-3737-45b3-bd5d-735cb7c5338b
