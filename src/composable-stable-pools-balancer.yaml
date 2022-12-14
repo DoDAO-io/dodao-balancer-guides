@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-14T22:43:56.161Z'
+created: '2022-12-14T22:51:16.184Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -44,7 +44,7 @@ steps:
     name: Background
     stepItems: []
     uuid: 1f9b285b-0f3d-4e02-a6d8-51ebdab5bc09
-  - content: >
+  - content: >-
       ## Stable Math
 
       Pools that use a constant product invariant (x*y=k) might not be the best
@@ -126,6 +126,26 @@ steps:
 
       We can pass `amplificationParameter` to the constructor when creating
       instance of ComposableStablePool.
+
+
+      ComposableStablePool(`StablePoolAmplification.sol`) uses timestamps to
+      slowly update its Amplification parameter over time. These changes must
+      occur over a minimum time period much larger than the blocktime, making
+      timestamp manipulation a non-issue. Amplification factor changes must
+      happen over a minimum period of one day, and can at most divide or
+      multiply the current value by 2 every day.
+
+
+      You can call the `_getAmplificationParameter` which also returns a boolean
+      to indicate whether there is an ongoing update
+
+
+      ```solidity
+
+      function _getAmplificationParameter() internal view returns (uint256
+      value, bool isUpdating)
+
+      ```
     name: Stable Math
     stepItems: []
     uuid: 0943077a-74a0-4317-a3db-fbbb0c2350ce
@@ -583,17 +603,17 @@ steps:
       ```solidity
 
         // ComposableStablePoolRates.sol
-  
+
         function setTokenRateCacheDuration(IERC20 token, uint256 duration)
         external authenticate
-  
-  
+
+
         // StablePoolAmplification.sol
-  
+
         function startAmplificationParameterUpdate(uint256 rawEndValue, uint256
         endTime) external authenticate
-  
-  
+
+
         function stopAmplificationParameterUpdate() external authenticate
 
       ```
