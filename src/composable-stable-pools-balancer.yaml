@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-08T11:22:42.962Z'
+created: '2022-12-14T20:22:44.191Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -436,5 +436,60 @@ steps:
     name: Extend  Composable Stable Pools
     stepItems: []
     uuid: 6f649721-5e7e-4137-b4c7-c997fee374fc
+  - content: >+
+      Like other pools, ComposableStablePool has a factory from which users can
+      deploy new pools. To deploy a pool, you must call that factory's create()
+      function with the following arguments 
+
+      ```typescript
+        create(
+          name: PromiseOrValue<string>,
+          symbol: PromiseOrValue<string>,
+          tokens: PromiseOrValue<string>[],
+          amplificationParameter: PromiseOrValue<BigNumberish>,
+          rateProviders: PromiseOrValue<string>[],
+          tokenRateCacheDurations: PromiseOrValue<BigNumberish>[],
+          exemptFromYieldProtocolFeeFlags: PromiseOrValue<boolean>[],
+          swapFeePercentage: PromiseOrValue<BigNumberish>,
+          owner: PromiseOrValue<string>,
+          overrides?: Overrides & { from?: PromiseOrValue<string> }
+        ): Promise<ContractTransaction>;
+      ```
+
+
+      ```typescript
+
+      const COMPOSABLE_STABLE_POOL_FACTORY_ASSDRESS = '0x.......';
+
+      const factory = await ethers.getContractAt('ComposableStablePoolFactory',
+                                                 COMPOSABLE_STABLE_POOL_FACTORY);
+
+      // function for your corresponding pool in that pool factory's ABI
+
+      const tx = await factory.create(
+
+      NAME, SYMBOL, tokens, amplificationParameter, weights,
+                                      swapFeePercentage, ZERO_ADDRESS);
+      const receipt = await tx.wait();
+
+
+      // We need to get the new pool address out of the PoolCreated event
+
+      const events = receipt.events.filter((e) => e.event === 'PoolCreated');
+
+      const poolAddress = events[0].args.pool;
+
+
+      // We're going to need the PoolId later, so ask the contract for it
+
+      const pool = await ethers.getContractAt('WeightedPool', poolAddress);
+
+      const poolId = await pool.getPoolId();
+
+      ```
+
+    name: Create and Deploy
+    stepItems: []
+    uuid: 00b73e0b-0a58-42c5-af36-6a0973367128
 thumbnail: https://d31h13bdjwgzxs.cloudfront.net/academy/balancer/balancers_fees.png
 uuid: composable-stable-pools-balancer
