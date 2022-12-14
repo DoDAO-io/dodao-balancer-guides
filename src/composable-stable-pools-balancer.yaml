@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-14T22:42:48.309Z'
+created: '2022-12-14T22:43:56.161Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -553,8 +553,9 @@ steps:
         uuid: 5cdecd20-9213-4ad8-89cf-b66466e4a309
     uuid: ffebd379-8156-4977-a806-85945213fc09
   - content: >
-      `ComposableStablePool` extends from `BasePool` which further extends from
-      `BasePoolAuthorization`. 
+      Access Control Management in ComposableStablePool works in the exact same
+      way as other pools. `ComposableStablePool` extends from `BasePool` which
+      further extends from `BasePoolAuthorization`. 
 
 
       `BasePool` delegates Access Control Management to Vault's Authorizer. This
