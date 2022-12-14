@@ -1,7 +1,7 @@
 categories:
   - engineering
 content: What are Composable Stable Pool and why do we need them?
-created: '2022-12-14T20:22:44.191Z'
+created: '2022-12-14T20:37:51.220Z'
 guideIntegrations:
   discordRoleIds: []
 guideType: onboarding
@@ -441,7 +441,7 @@ steps:
       deploy new pools. To deploy a pool, you must call that factory's create()
       function with the following arguments 
 
-      ```typescript
+      ```javascript
         create(
           name: PromiseOrValue<string>,
           symbol: PromiseOrValue<string>,
@@ -454,10 +454,12 @@ steps:
           owner: PromiseOrValue<string>,
           overrides?: Overrides & { from?: PromiseOrValue<string> }
         ): Promise<ContractTransaction>;
+
       ```
 
 
-      ```typescript
+
+      ```javascript
 
       const COMPOSABLE_STABLE_POOL_FACTORY_ASSDRESS = '0x.......';
 
