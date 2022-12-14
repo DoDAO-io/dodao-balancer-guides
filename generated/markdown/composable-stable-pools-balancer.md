@@ -406,36 +406,48 @@ Access Control Management in ComposableStablePool works in the exact same way as
 
 `BasePool` delegates Access Control Management to Vault's Authorizer. This can be seen from the below code
 
-```solidity function _getAuthorizer() internal view override returns (IAuthorizer) {
-    // Access control management is delegated to the Vault's Authorizer. This lets Balancer Governance manage which
-    // accounts can call permissioned functions: for example, to perform emergency pauses.
-    // If the owner is delegated, then *all* permissioned functions, including `setSwapFeePercentage`, will be under
-    // Governance control.
-    return getVault().getAuthorizer();
-} ```
+```solidity
+  function _getAuthorizer() internal view override returns (IAuthorizer) {
+      // Access control management is delegated to the Vault's Authorizer. This lets Balancer Governance manage which
+      // accounts can call permissioned functions: for example, to perform emergency pauses.
+      // If the owner is delegated, then *all* permissioned functions, including `setSwapFeePercentage`, will be under
+      // Governance control.
+      return getVault().getAuthorizer();
+  }
+```
 
 Most of the methods that modify ComposableStablePool's behaviour are protected using the same authentication mechanism as used in other pool. Below are some of the signatures of ComposableStablePool related functions that modify the behaviour and are protected using the `authenticate` modifier.
 
 ```solidity
-// ComposableStablePoolRates.sol
-function setTokenRateCacheDuration(IERC20 token, uint256 duration) external authenticate
 
-// StablePoolAmplification.sol
-function startAmplificationParameterUpdate(uint256 rawEndValue, uint256 endTime) external authenticate
+  // ComposableStablePoolRates.sol
 
-function stopAmplificationParameterUpdate() external authenticate
+  function setTokenRateCacheDuration(IERC20 token, uint256 duration)
+  external authenticate
+
+
+  // StablePoolAmplification.sol
+
+  function startAmplificationParameterUpdate(uint256 rawEndValue, uint256
+  endTime) external authenticate
+
+
+  function stopAmplificationParameterUpdate() external authenticate
+
 ```
 
 `authenticate` modifier is declared in `Authentication.sol`
 
 ```solidity
-/**
- * @dev Reverts unless the caller is allowed to call this function. Should only be applied to external functions.
- */
-modifier authenticate() {
-    _authenticateCaller();
-    _;
-}
+
+  /**
+   * @dev Reverts unless the caller is allowed to call this function. Should only be applied to external functions.
+   */
+  modifier authenticate() {
+      _authenticateCaller();
+      _;
+  }
+
 ```
 
 
